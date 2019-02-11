@@ -83,7 +83,7 @@ const Portfolio = () => {
   return (
     <div>
       <Nav secondary />
-      <h1 className={styles.titleSection}>MI TRABAJO</h1>
+      <h1 className={styles.titleSection}>MI PORTFOLIO</h1>
       <div className={styles.works}>
         {Apps.map((item, index) => {
           return <Card key={index} {...item} />
