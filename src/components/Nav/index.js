@@ -12,6 +12,7 @@ const Nav = ({ secondary }) => {
     <div className={styles.nav}>
       <Link className={stylesClass} to='/'>Home</Link>
       <Link className={stylesClass} to='/blog'>Blog</Link>
+      <Link className={stylesClass} to='/portfolio'>portfolio</Link>
       {/* <Link className={stylesClass} to='/'>Résumé</Link>
       <Link className={stylesClass} to='/'>portafolio</Link>
       <Link className={stylesClass} to='/'>contratame</Link> */}
