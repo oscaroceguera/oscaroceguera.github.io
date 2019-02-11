@@ -1,0 +1,43 @@
+@value breackpoints: "../../styles/breakpoints.css";
+@value tablet as bp-tablet, phone as bp-phone from breackpoints;
+
+
+.container {
+  width: 900px;
+  margin: 3em auto;
+  border-top: 1.5px solid #e0e0e0;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.container a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgba(255,150, 113, 0.8);
+}
+
+a:hover {
+  border-bottom: 1px solid rgba(255,150, 113, 0.8);
+}
+
+a span {
+  color: black;
+  font-size: .8em;
+  text-transform: lowercase;
+  font-weight: bold;
+}
+
+
+@media bp-tablet {
+  .container {
+    width: initial;
+    margin: 1em;
+    flex-direction: column;
+  }
+
+  .itemLinks {
+    margin: .5em 0;
+  }
+}

@@ -1,0 +1,40 @@
+@value breackpoints: "../../styles/breakpoints.css";
+@value tablet as bp-tablet, phone as bp-phone from breackpoints;
+
+.nav {
+  color: white;
+  padding: 1em;
+  text-align: right;
+}
+
+.navLink {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin-right: .5em;
+}
+
+.navLink:hover {
+  border-bottom: 2px solid white;
+}
+
+.secondary {
+  color: black;
+}
+
+.secondary:hover {
+  border-bottom: 2px solid black;
+}
+
+
+@media bp-phone {
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .navLink {
+    margin: .5em;
+  }
+}

@@ -1,0 +1,33 @@
+@value breackpoints: "../styles/breakpoints.css";
+@value tablet as bp-tablet, phone as bp-phone from breackpoints;
+
+.container {
+  width: 900px;
+  margin: 3em auto;
+}
+
+.title {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.work {
+  margin: 1.5em 0;
+  text-transform: uppercase;
+}
+
+.workTitle {
+  margin-bottom: .5em;
+}
+
+.workTitle a {
+  text-decoration: none;
+  color: rgba(255,150, 113, 0.8);
+}
+
+@media bp-tablet {
+  .container {
+    width: initial;
+    margin: 1em;
+  }
+}
