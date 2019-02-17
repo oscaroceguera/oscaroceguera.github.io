@@ -3,16 +3,23 @@ import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import Nav from '../../components/Nav'
 import styles from './styles.module.css'
+import Metatags from '../../components/Metatags'
 
-export default ({ data }) => {
+export default (props) => {
   return (
     <div>
+      <Metatags
+        title='Oscar Oceguera'
+        description='Oscar Oceguera desarrollador full stack javascript'
+        url={props.data.site.siteMetadata.siteUrl}
+        pathname={props.location.pathname}
+      />
       <div className={styles.header}>
         <Nav />
         <h1 className={styles.headerTitle}>Blog</h1>
       </div>
       <div className={styles.posts}>
-        {data.allMarkdownRemark.edges.map(({ node }) => {
+        {props.data.allMarkdownRemark.edges.map(({ node }) => {
           return (
             <div className={styles.post} key={node.id}>
               <Img fixed={node.frontmatter.image.childImageSharp.fixed} />
@@ -61,5 +68,10 @@ export const query = graphql`
       }
     }
   }
+  site {
+      siteMetadata {
+        title
+      }
+    }
 }
 `

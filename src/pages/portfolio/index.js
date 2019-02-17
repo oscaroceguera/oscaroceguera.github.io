@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from '../../components/Nav'
 import Footer from '../../components/Footer'
+import Metatags from '../../components/Metatags'
 import styles from './styles.module.css'
 import Site from './site.png'
 import NormApp from './norm-app.png'
@@ -79,9 +80,15 @@ const Card = ({ img, title, description, repos, cloud }) => {
   )
 }
 
-const Portfolio = () => {
+export default (props) => {
   return (
     <div>
+      <Metatags
+        title='Oscar Oceguera'
+        description='Oscar Oceguera desarrollador full stack javascript'
+        url={props.data.site.siteMetadata.siteUrl}
+        pathname={props.location.pathname}
+      />
       <Nav secondary />
       <h1 className={styles.titleSection}>MI PORTFOLIO</h1>
       <div className={styles.works}>
@@ -94,4 +101,12 @@ const Portfolio = () => {
   )
 }
 
-export default Portfolio
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

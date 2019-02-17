@@ -3,12 +3,19 @@ import { graphql } from 'gatsby'
 import Nav from '../../../components/Nav'
 import Img from 'gatsby-image'
 import styles from './styles.module.css'
+import Metatags from '../../../components/Metatags'
 
-export default ({ data }) => {
-  const post = data.markdownRemark
+export default (props) => {
+  const post = props.data.markdownRemark
 
   return (
     <div>
+      <Metatags
+        title={post.frontmatter.title}
+        description={post.excerpt}
+        url={props.data.site.siteMetadata.siteUrl}
+        pathname={props.location.pathname}
+      />
       <Nav secondary />
       <div className={styles.container}>
         <h1 className={styles.title}>{post.frontmatter.title}</h1>
@@ -25,6 +32,7 @@ export const query = graphql`
   query BlogPostQuery($slug: String) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt(pruneLength: 200)
       frontmatter {
         title
         date(formatString: "DD MMMM, YYYY")
@@ -35,6 +43,11 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+     site {
+      siteMetadata {
+        title
       }
     }
   }
