@@ -1,13 +1,19 @@
 import LanguageSwitcher from '@/components/LanguageSwitcher'
-import { getDictionary } from '@/lib/i18n'
+import { getDictionary, isValidLocale } from '@/lib/i18n'
 import type { Locale } from '@/next.config'
+import { defaultLocale, locales } from '@/next.config'
+
+export async function generateStaticParams(): Promise<{ locale: Locale }[]> {
+  return locales.map((locale) => ({ locale }))
+}
 
 export default async function Home({
   params,
 }: {
-  params: Promise<{ locale: Locale }>
+  params: Promise<{ locale: string }>
 }) {
-  const { locale } = await params
+  const { locale: rawLocale } = await params
+  const locale = isValidLocale(rawLocale) ? rawLocale : defaultLocale
   const dict = await getDictionary(locale)
 
   const hero = dict.hero as {
