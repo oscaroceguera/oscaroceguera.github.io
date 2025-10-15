@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "title": "Oscar Oceguera - Ingeniero Fullstack JavaScript",
+    "description": "Portafolio profesional de Oscar Eduardo Oceguera Bibriesca, ingeniero fullstack JavaScript especializado en React, Node.js y tecnologías web modernas."
+  },
+  "hero": {
+    "name": "Oscar Eduardo Oceguera Bibriesca",
+    "title": "Ingeniero Fullstack JavaScript",
+    "subtitle": "Construyendo soluciones web innovadoras con React, Node.js y JavaScript moderno. Apasionado por compartir conocimiento y enfrentar desafíos.",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "about": {
+    "title": "Acerca de Mí",
+    "paragraph1": "Soy un desarrollador de software que disfruta los desafíos y ama construir soluciones innovadoras. Como constructor de equipos, creo en el poder de la colaboración y el intercambio de conocimientos.",
+    "paragraph2": "Actualmente trabajando en Clip, aporto perseverancia, capacidad e innovación a cada proyecto en el que trabajo.",
+    "location": "Ubicación",
+    "locationValue": "Culiacán, Sinaloa, México",
+    "community": "Comunidad",
+    "communityValue": "Organizador en Eventloop • Voluntario en JSConfMX"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "list": [
+      "React.js",
+      "Node.js",
+      "JavaScript/TypeScript",
+      "Desarrollo Frontend",
+      "Desarrollo Fullstack",
+      "Diseño UX",
+      "AngularJS",
+      "Tecnologías Web",
+      "Arquitectura Web Moderna"
+    ]
+  },
+  "education": {
+    "title": "Educación y Certificaciones",
+    "degree": "Instituto Tecnologico de Culiacan",
+    "years": "2005 - 2010",
+    "certifications": "Certificaciones Profesionales",
+    "certList": [
+      "Curso Profesional de Frontend - Platzi",
+      "Curso Profesional de React.js",
+      "Curso de AngularJS",
+      "Curso de Diseño UX"
+    ]
+  },
+  "footer": {
+    "copyright": "© 2025 Oscar Eduardo Oceguera Bibriesca. Todos los derechos reservados."
+  }
+}
