@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 
-import { getDictionary } from '@/lib/i18n'
+import { getDictionary, isValidLocale } from '@/lib/i18n'
 import type { Locale } from '@/next.config'
-import { locales } from '@/next.config'
+import { defaultLocale, locales } from '@/next.config'
 
 import '../globals.css'
 
@@ -24,9 +24,10 @@ export async function generateStaticParams(): Promise<{ locale: Locale }[]> {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: Locale }>
+  params: Promise<{ locale: string }>
 }): Promise<Metadata> {
-  const { locale } = await params
+  const { locale: rawLocale } = await params
+  const locale = isValidLocale(rawLocale) ? rawLocale : defaultLocale
   const dict = await getDictionary(locale)
   const metadata = dict.metadata as { title: string; description: string }
 
@@ -41,9 +42,10 @@ export default async function LocaleLayout({
   params,
 }: Readonly<{
   children: React.ReactNode
-  params: Promise<{ locale: Locale }>
+  params: Promise<{ locale: string }>
 }>) {
-  const { locale } = await params
+  const { locale: rawLocale } = await params
+  const locale = isValidLocale(rawLocale) ? rawLocale : defaultLocale
 
   return (
     <html lang={locale}>
