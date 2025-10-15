@@ -1,0 +1,1 @@
+- When I write "gcc" please gimme the conventional commit from @agent-conventional-commit to my changes, gime the git command like "git commit -m "..."", max 100 characters
