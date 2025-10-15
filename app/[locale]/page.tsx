@@ -1,8 +1,6 @@
-import type { Locale } from '@/next.config'
-
-import { getDictionary } from '@/lib/i18n'
-
 import LanguageSwitcher from '@/components/LanguageSwitcher'
+import { getDictionary } from '@/lib/i18n'
+import type { Locale } from '@/next.config'
 
 export default async function Home({
   params,
@@ -46,9 +44,15 @@ export default async function Home({
       {/* Hero Section */}
       <section className="mx-auto max-w-6xl px-6 py-20">
         <div className="flex flex-col items-center text-center">
-          <h1 className="mb-4 text-5xl font-bold text-white sm:text-7xl">{hero.name}</h1>
-          <p className="mb-8 text-2xl text-slate-300 sm:text-3xl">{hero.title}</p>
-          <p className="mb-8 max-w-2xl text-lg text-slate-400">{hero.subtitle}</p>
+          <h1 className="mb-4 text-5xl font-bold text-white sm:text-7xl">
+            {hero.name}
+          </h1>
+          <p className="mb-8 text-2xl text-slate-300 sm:text-3xl">
+            {hero.title}
+          </p>
+          <p className="mb-8 max-w-2xl text-lg text-slate-400">
+            {hero.subtitle}
+          </p>
           <div className="flex gap-4">
             <a
               href="https://github.com/oscaroceguera"
@@ -80,9 +84,13 @@ export default async function Home({
               <p className="text-lg text-slate-300">{about.paragraph2}</p>
             </div>
             <div className="rounded-lg bg-slate-700/50 p-6">
-              <h3 className="mb-4 text-xl font-semibold text-white">{about.location}</h3>
+              <h3 className="mb-4 text-xl font-semibold text-white">
+                {about.location}
+              </h3>
               <p className="mb-4 text-slate-300">{about.locationValue}</p>
-              <h3 className="mb-4 text-xl font-semibold text-white">{about.community}</h3>
+              <h3 className="mb-4 text-xl font-semibold text-white">
+                {about.community}
+              </h3>
               <p className="text-slate-300">{about.communityValue}</p>
             </div>
           </div>
@@ -109,14 +117,20 @@ export default async function Home({
       {/* Education & Certifications */}
       <section className="bg-slate-800/50 py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="mb-8 text-3xl font-bold text-white">{education.title}</h2>
+          <h2 className="mb-8 text-3xl font-bold text-white">
+            {education.title}
+          </h2>
           <div className="space-y-6">
             <div className="rounded-lg bg-slate-700/50 p-6">
-              <h3 className="mb-2 text-xl font-semibold text-white">{education.degree}</h3>
+              <h3 className="mb-2 text-xl font-semibold text-white">
+                {education.degree}
+              </h3>
               <p className="text-slate-300">{education.years}</p>
             </div>
             <div className="rounded-lg bg-slate-700/50 p-6">
-              <h3 className="mb-4 text-xl font-semibold text-white">{education.certifications}</h3>
+              <h3 className="mb-4 text-xl font-semibold text-white">
+                {education.certifications}
+              </h3>
               <ul className="space-y-2 text-slate-300">
                 {education.certList.map((cert) => (
                   <li key={cert}>• {cert}</li>

@@ -1,10 +1,9 @@
 'use client'
 
-import type { Locale } from '@/next.config'
-
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
+import type { Locale } from '@/next.config'
 import { locales } from '@/next.config'
 
 export default function LanguageSwitcher({
@@ -21,7 +20,7 @@ export default function LanguageSwitcher({
   }
 
   return (
-    <div className="fixed right-6 top-6 z-50">
+    <div className="fixed top-6 right-6 z-50">
       <div className="flex gap-2 rounded-lg bg-slate-800/90 p-2 shadow-lg backdrop-blur-sm">
         {locales.map((locale) => (
           <Link
