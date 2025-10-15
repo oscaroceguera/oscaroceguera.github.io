@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ locale: Locale }[]> {
   return locales.map((locale) => ({ locale }))
 }
 
