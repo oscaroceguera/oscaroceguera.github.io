@@ -1,9 +1,8 @@
 import type { Metadata } from 'next'
-import type { Locale } from '@/next.config'
-
 import { Geist, Geist_Mono } from 'next/font/google'
 
 import { getDictionary } from '@/lib/i18n'
+import type { Locale } from '@/next.config'
 import { locales } from '@/next.config'
 
 import '../globals.css'
@@ -48,7 +47,9 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

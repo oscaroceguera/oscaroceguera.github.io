@@ -1,5 +1,4 @@
 import type { Locale } from '@/next.config'
-
 import { defaultLocale, locales } from '@/next.config'
 
 type Translations = {
