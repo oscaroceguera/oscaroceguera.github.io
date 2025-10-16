@@ -3,8 +3,8 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-import type { Locale } from '@/next.config'
-import { locales } from '@/next.config'
+import type { Locale } from '@/lib/locales'
+import { locales } from '@/lib/locales'
 
 export default function LanguageSwitcher({
   currentLocale,

@@ -1,5 +1,5 @@
-import type { Locale } from '@/next.config'
-import { defaultLocale, locales } from '@/next.config'
+import type { Locale } from './locales'
+import { defaultLocale, locales } from './locales'
 
 type Translations = {
   [key: string]: string | string[] | Translations
