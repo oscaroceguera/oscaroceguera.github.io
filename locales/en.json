@@ -8,7 +8,8 @@
     "title": "Full Stack JavaScript Developer",
     "subtitle": "Software Engineer at Clip with 8+ years of experience building scalable web applications. We should create applications to facilitate people's work and performance.",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "downloadCV": "Download CV"
   },
   "about": {
     "title": "About Me",
@@ -18,6 +19,71 @@
     "locationValue": "Culiacán, Sinaloa, Mexico • Remote Available",
     "community": "Community Leadership",
     "communityValue": "JSConf México Organizer (2023-Present) • EventLoop Mexico Co-Organizer • Hackademy Mentor"
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "jobs": [
+      {
+        "company": "Clip",
+        "position": "Software Engineer",
+        "period": "2020 - Present",
+        "location": "Mexico City, Mexico (Remote)",
+        "description": "Leading frontend development initiatives at Mexico's leading fintech platform, building scalable payment solutions that serve thousands of merchants nationwide. Architecting and implementing modern web applications using React, Next.js, and TypeScript.",
+        "achievements": [
+          "Architected and developed core payment platform features processing millions in transactions",
+          "Implemented microfrontend architecture reducing deployment time by 40%",
+          "Led migration from legacy codebase to modern React/Next.js stack",
+          "Established testing standards achieving 85%+ code coverage with Jest and React Testing Library",
+          "Mentored team of 5+ junior developers and conducted comprehensive code reviews",
+          "Collaborated with product, design, and backend teams to deliver user-centric solutions"
+        ]
+      },
+      {
+        "company": "Technology Companies",
+        "position": "Senior Full Stack Developer",
+        "period": "2017 - 2020",
+        "location": "Mexico City, Mexico",
+        "description": "Developed enterprise web applications and REST APIs for various clients across fintech, e-commerce, and SaaS sectors. Specialized in JavaScript full-stack development with React, Node.js, and GraphQL.",
+        "achievements": [
+          "Built and deployed 10+ production applications serving 50,000+ users",
+          "Implemented GraphQL APIs reducing data over-fetching by 60%",
+          "Designed and developed microservices architecture with Node.js and Express",
+          "Integrated payment gateways (Stripe, PayPal) for e-commerce platforms",
+          "Reduced application load time by 50% through performance optimization",
+          "Led technical planning and sprint retrospectives for agile teams"
+        ]
+      },
+      {
+        "company": "Software Development Firms",
+        "position": "Full Stack JavaScript Developer",
+        "period": "2015 - 2017",
+        "location": "Culiacán, Sinaloa, Mexico",
+        "description": "Developed responsive web applications and RESTful APIs using modern JavaScript frameworks. Focused on creating intuitive user interfaces and scalable backend services.",
+        "achievements": [
+          "Developed 15+ web applications using React, Angular, and Vue.js",
+          "Built RESTful APIs with Node.js, Express, and MongoDB",
+          "Implemented responsive designs achieving 95%+ mobile compatibility scores",
+          "Collaborated with UX designers to implement pixel-perfect interfaces",
+          "Integrated third-party APIs and services (Google Maps, Firebase, AWS)",
+          "Participated in code reviews and pair programming sessions"
+        ]
+      },
+      {
+        "company": "Early Career",
+        "position": "Junior Web Developer",
+        "period": "2013 - 2015",
+        "location": "Culiacán, Sinaloa, Mexico",
+        "description": "Started professional career building websites and web applications. Gained foundational experience in HTML, CSS, JavaScript, and backend technologies.",
+        "achievements": [
+          "Developed 20+ websites for small businesses and startups",
+          "Learned and applied JavaScript frameworks (jQuery, AngularJS)",
+          "Implemented responsive designs using Bootstrap and CSS3",
+          "Managed WordPress installations and custom theme development",
+          "Worked with MySQL databases and PHP backend development",
+          "Provided technical support and website maintenance for clients"
+        ]
+      }
+    ]
   },
   "skills": {
     "title": "Core Technologies & Skills",
