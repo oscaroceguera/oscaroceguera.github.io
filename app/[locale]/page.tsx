@@ -23,6 +23,7 @@ export default async function Home({
     subtitle: string
     github: string
     linkedin: string
+    downloadCV: string
   }
   const about = dict.about as {
     title: string
@@ -32,6 +33,17 @@ export default async function Home({
     locationValue: string
     community: string
     communityValue: string
+  }
+  const experience = (dict.experience as unknown) as {
+    title: string
+    jobs: Array<{
+      company: string
+      position: string
+      period: string
+      location: string
+      description: string
+      achievements: string[]
+    }>
   }
   const skills = dict.skills as { title: string; list: string[] }
   const education = dict.education as {
@@ -52,9 +64,11 @@ export default async function Home({
       <AnimatedHome
         hero={hero}
         about={about}
+        experience={experience}
         skills={skills}
         education={education}
         footer={footer}
+        locale={locale}
       />
     </div>
   )

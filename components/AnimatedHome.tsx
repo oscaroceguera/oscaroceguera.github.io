@@ -2,12 +2,16 @@
 
 import { motion } from 'framer-motion'
 
+import { generateCV } from '@/lib/generateCV'
+import type { Locale } from '@/lib/locales'
+
 interface Hero {
   name: string
   title: string
   subtitle: string
   github: string
   linkedin: string
+  downloadCV: string
 }
 
 interface About {
@@ -18,6 +22,20 @@ interface About {
   locationValue: string
   community: string
   communityValue: string
+}
+
+interface Job {
+  company: string
+  position: string
+  period: string
+  location: string
+  description: string
+  achievements: string[]
+}
+
+interface Experience {
+  title: string
+  jobs: Job[]
 }
 
 interface Skills {
@@ -40,18 +58,42 @@ interface Footer {
 interface AnimatedHomeProps {
   hero: Hero
   about: About
+  experience: Experience
   skills: Skills
   education: Education
   footer: Footer
+  locale: Locale
 }
 
 export default function AnimatedHome({
   hero,
   about,
+  experience,
   skills,
   education,
   footer,
+  locale,
 }: AnimatedHomeProps) {
+  const handleDownloadCV = () => {
+    generateCV({
+      name: hero.name,
+      title: hero.title,
+      subtitle: hero.subtitle,
+      location: about.locationValue,
+      github: 'https://github.com/oscaroceguera',
+      linkedin: 'https://linkedin.com/in/oscaroceguerab',
+      aboutParagraph1: about.paragraph1,
+      aboutParagraph2: about.paragraph2,
+      community: about.communityValue,
+      experience: experience.jobs,
+      skills: skills.list,
+      degree: education.degree,
+      years: education.years,
+      certifications: education.certList,
+      downloadText: hero.downloadCV,
+      locale,
+    })
+  }
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -140,7 +182,7 @@ export default function AnimatedHome({
           >
             {hero.subtitle}
           </motion.p>
-          <motion.div className="flex gap-4" variants={fadeInUp}>
+          <motion.div className="flex flex-wrap justify-center gap-4" variants={fadeInUp}>
             <motion.a
               href="https://github.com/oscaroceguera"
               target="_blank"
@@ -161,6 +203,14 @@ export default function AnimatedHome({
             >
               {hero.linkedin}
             </motion.a>
+            <motion.button
+              onClick={handleDownloadCV}
+              className="rounded-lg bg-green-600 px-6 py-3 font-semibold text-white transition hover:bg-green-500"
+              whileHover={{ scale: 1.1, y: -3 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              📄 {hero.downloadCV}
+            </motion.button>
           </motion.div>
         </div>
       </motion.section>

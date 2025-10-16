@@ -2,7 +2,8 @@ import type { Locale } from './locales'
 import { defaultLocale, locales } from './locales'
 
 type Translations = {
-  [key: string]: string | string[] | Translations
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key: string]: any
 }
 
 const dictionaries: Record<Locale, () => Promise<Translations>> = {

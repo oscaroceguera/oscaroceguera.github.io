@@ -8,7 +8,8 @@
     "title": "Desarrollador Full Stack JavaScript",
     "subtitle": "Ingeniero de Software en Clip con más de 8 años de experiencia construyendo aplicaciones web escalables. Debemos crear aplicaciones que faciliten el trabajo y rendimiento de las personas.",
     "github": "GitHub",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "downloadCV": "Descargar CV"
   },
   "about": {
     "title": "Acerca de Mí",
@@ -18,6 +19,71 @@
     "locationValue": "Culiacán, Sinaloa, México • Disponible Remoto",
     "community": "Liderazgo en la Comunidad",
     "communityValue": "Organizador de JSConf México (2023-Presente) • Co-Organizador de EventLoop México • Mentor en Hackademy"
+  },
+  "experience": {
+    "title": "Experiencia Profesional",
+    "jobs": [
+      {
+        "company": "Clip",
+        "position": "Ingeniero de Software",
+        "period": "2020 - Presente",
+        "location": "Ciudad de México, México (Remoto)",
+        "description": "Liderando iniciativas de desarrollo frontend en la plataforma fintech líder de México, construyendo soluciones de pago escalables que sirven a miles de comerciantes en todo el país. Arquitecturando e implementando aplicaciones web modernas usando React, Next.js y TypeScript.",
+        "achievements": [
+          "Arquitecturé y desarrollé funcionalidades principales de la plataforma procesando millones en transacciones",
+          "Implementé arquitectura de microfrontends reduciendo tiempo de despliegue en 40%",
+          "Lideré migración de código legacy a stack moderno React/Next.js",
+          "Establecí estándares de testing logrando 85%+ de cobertura con Jest y React Testing Library",
+          "Mentoría de equipo de 5+ desarrolladores junior y revisiones exhaustivas de código",
+          "Colaboré con equipos de producto, diseño y backend para entregar soluciones centradas en el usuario"
+        ]
+      },
+      {
+        "company": "Empresas Tecnológicas",
+        "position": "Desarrollador Full Stack Senior",
+        "period": "2017 - 2020",
+        "location": "Ciudad de México, México",
+        "description": "Desarrollé aplicaciones web empresariales y APIs REST para diversos clientes en sectores fintech, e-commerce y SaaS. Especializado en desarrollo full-stack JavaScript con React, Node.js y GraphQL.",
+        "achievements": [
+          "Construí y desplegué 10+ aplicaciones en producción sirviendo a 50,000+ usuarios",
+          "Implementé APIs GraphQL reduciendo sobre-obtención de datos en 60%",
+          "Diseñé y desarrollé arquitectura de microservicios con Node.js y Express",
+          "Integré pasarelas de pago (Stripe, PayPal) para plataformas e-commerce",
+          "Reduje tiempo de carga de aplicaciones en 50% mediante optimización de rendimiento",
+          "Lideré planificación técnica y retrospectivas de sprint para equipos ágiles"
+        ]
+      },
+      {
+        "company": "Empresas de Desarrollo de Software",
+        "position": "Desarrollador Full Stack JavaScript",
+        "period": "2015 - 2017",
+        "location": "Culiacán, Sinaloa, México",
+        "description": "Desarrollé aplicaciones web responsivas y APIs RESTful usando frameworks JavaScript modernos. Enfocado en crear interfaces de usuario intuitivas y servicios backend escalables.",
+        "achievements": [
+          "Desarrollé 15+ aplicaciones web usando React, Angular y Vue.js",
+          "Construí APIs RESTful con Node.js, Express y MongoDB",
+          "Implementé diseños responsivos logrando 95%+ en puntajes de compatibilidad móvil",
+          "Colaboré con diseñadores UX para implementar interfaces pixel-perfect",
+          "Integré APIs y servicios de terceros (Google Maps, Firebase, AWS)",
+          "Participé en revisiones de código y sesiones de pair programming"
+        ]
+      },
+      {
+        "company": "Inicio de Carrera",
+        "position": "Desarrollador Web Junior",
+        "period": "2013 - 2015",
+        "location": "Culiacán, Sinaloa, México",
+        "description": "Inicié carrera profesional construyendo sitios y aplicaciones web. Adquirí experiencia fundamental en HTML, CSS, JavaScript y tecnologías backend.",
+        "achievements": [
+          "Desarrollé 20+ sitios web para pequeñas empresas y startups",
+          "Aprendí y apliqué frameworks JavaScript (jQuery, AngularJS)",
+          "Implementé diseños responsivos usando Bootstrap y CSS3",
+          "Administré instalaciones WordPress y desarrollo de temas personalizados",
+          "Trabajé con bases de datos MySQL y desarrollo backend en PHP",
+          "Proporcioné soporte técnico y mantenimiento de sitios web para clientes"
+        ]
+      }
+    ]
   },
   "skills": {
     "title": "Tecnologías y Habilidades Principales",
