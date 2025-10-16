@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 
 import { getDictionary, isValidLocale } from '@/lib/i18n'
-import type { Locale } from '@/next.config'
-import { defaultLocale, locales } from '@/next.config'
+import type { Locale } from '@/lib/locales'
+import { defaultLocale, locales } from '@/lib/locales'
 
 import '../globals.css'
 

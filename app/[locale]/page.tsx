@@ -1,7 +1,7 @@
 import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { getDictionary, isValidLocale } from '@/lib/i18n'
-import type { Locale } from '@/next.config'
-import { defaultLocale, locales } from '@/next.config'
+import type { Locale } from '@/lib/locales'
+import { defaultLocale, locales } from '@/lib/locales'
 
 export async function generateStaticParams(): Promise<{ locale: Locale }[]> {
   return locales.map((locale) => ({ locale }))
