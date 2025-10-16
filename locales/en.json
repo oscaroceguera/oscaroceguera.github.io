@@ -1,48 +1,69 @@
 {
   "metadata": {
-    "title": "Oscar Oceguera - Fullstack JavaScript Engineer",
-    "description": "Professional portfolio of Oscar Eduardo Oceguera Bibriesca, a fullstack JavaScript engineer specializing in React, Node.js, and modern web technologies."
+    "title": "Oscar Oceguera - Full Stack JavaScript Developer",
+    "description": "Professional portfolio of Oscar Eduardo Oceguera Bibriesca, a Full Stack JavaScript Developer with 8+ years of experience specializing in React, Node.js, and modern web technologies. Software Engineer at Clip, JSConf México Organizer, and EventLoop Mexico Co-Organizer."
   },
   "hero": {
     "name": "Oscar Eduardo Oceguera Bibriesca",
-    "title": "Fullstack JavaScript Engineer",
-    "subtitle": "Building innovative web solutions with React, Node.js, and modern JavaScript. Passionate about sharing knowledge and tackling challenging problems.",
+    "title": "Full Stack JavaScript Developer",
+    "subtitle": "Software Engineer at Clip with 8+ years of experience building scalable web applications. We should create applications to facilitate people's work and performance.",
     "github": "GitHub",
     "linkedin": "LinkedIn"
   },
   "about": {
     "title": "About Me",
-    "paragraph1": "I'm a software developer who enjoys challenges and loves building innovative solutions. As a team builder, I believe in the power of collaboration and knowledge sharing.",
-    "paragraph2": "Currently working at Clip, I bring perseverance, capability, and innovation to every project I work on.",
+    "paragraph1": "I'm a Full Stack JavaScript Developer with 8+ years of experience building scalable web applications that impact thousands of users. As a team builder who enjoys challenges, I believe in the power of collaboration and knowledge sharing to create user-centric solutions that enhance efficiency.",
+    "paragraph2": "Currently working as a Software Engineer at Clip, a leading Mexican fintech platform, I bring perseverance, capability, and innovation to every project. I emphasize attention to detail in UI design and believe in building applications that facilitate people's work and performance.",
     "location": "Location",
-    "locationValue": "Culiacán, Sinaloa, Mexico",
-    "community": "Community",
-    "communityValue": "Organizer at Eventloop • Volunteer at JSConfMX"
+    "locationValue": "Culiacán, Sinaloa, Mexico • Remote Available",
+    "community": "Community Leadership",
+    "communityValue": "JSConf México Organizer (2023-Present) • EventLoop Mexico Co-Organizer • Hackademy Mentor"
   },
   "skills": {
-    "title": "Technical Skills",
+    "title": "Core Technologies & Skills",
     "list": [
+      "JavaScript",
+      "TypeScript",
       "React.js",
       "Node.js",
-      "JavaScript/TypeScript",
-      "Frontend Development",
-      "Fullstack Development",
-      "UX Design",
-      "AngularJS",
-      "Web Technologies",
-      "Modern Web Architecture"
+      "Express.js",
+      "GraphQL",
+      "Redux",
+      "Next.js",
+      "Jest",
+      "Vitest",
+      "React Testing Library",
+      "Git",
+      "MongoDB",
+      "Webpack",
+      "HTML5",
+      "Prisma",
+      "PostgreSQL",
+      "CSS3",
+      "Material-UI",
+      "Tailwind CSS",
+      "Stripe",
+      "Microfrontends",
+      "BDD/TDD",
+      "Local LLMs (Ollama, LM Studio)",
+      "UX/UI Design",
+      "Accessibility"
     ]
   },
   "education": {
     "title": "Education & Certifications",
-    "degree": "Instituto Tecnologico de Culiacan",
+    "degree": "Computer Systems Engineering - Instituto Tecnológico de Culiacán",
     "years": "2005 - 2010",
-    "certifications": "Professional Certifications",
+    "certifications": "Recent Certifications (2025)",
     "certList": [
-      "Professional Frontend Course - Platzi",
-      "React.js Professional Course",
-      "AngularJS Course",
-      "UX Design Course"
+      "Local LLMs via Ollama & LM Studio",
+      "React Testing Library with Jest/Vitest",
+      "Microfrontends with React",
+      "Next.js Complete Guide",
+      "Node.js Express Testing",
+      "React.js Advanced Hooks",
+      "GraphQL & Redux",
+      "UX/UI Design & Accessibility"
     ]
   },
   "footer": {
