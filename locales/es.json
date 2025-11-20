@@ -1,24 +1,24 @@
 {
   "metadata": {
     "title": "Oscar Oceguera - Desarrollador Full Stack JavaScript",
-    "description": "Portafolio profesional de Oscar Eduardo Oceguera Bibriesca, Desarrollador Full Stack JavaScript con más de 8 años de experiencia especializado en React, Node.js y tecnologías web modernas. Ingeniero de Software en Clip, Organizador de JSConf México y Co-Organizador de EventLoop México."
+    "description": "Portafolio profesional de Oscar Eduardo Oceguera Bibriesca, Desarrollador Full Stack JavaScript con más de 8 años de experiencia especializado en React, Node.js y tecnologías web modernas. Ingeniero de Software en Clip (plataforma fintech de México), Organizador de JSConf México (500+ desarrolladores) y Co-Organizador de EventLoop México. 277 repositorios, 922 seguidores, 16+ certificaciones."
   },
   "hero": {
     "name": "Oscar Eduardo Oceguera Bibriesca",
     "title": "Desarrollador Full Stack JavaScript",
-    "subtitle": "Ingeniero de Software en Clip con más de 8 años de experiencia construyendo aplicaciones web escalables. Debemos crear aplicaciones que faciliten el trabajo y rendimiento de las personas.",
+    "subtitle": "Ingeniero de Software en Clip con más de 8 años de experiencia construyendo aplicaciones web escalables que sirven a miles de usuarios en México. Apasionado por enfrentar desafíos técnicos y compartir conocimiento. 922 seguidores • 277 repositorios • Disponible para trabajo remoto y reubicación.",
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "downloadCV": "Descargar CV"
   },
   "about": {
     "title": "Acerca de Mí",
-    "paragraph1": "Soy un Desarrollador Full Stack JavaScript con más de 8 años de experiencia construyendo aplicaciones web escalables que impactan a miles de usuarios. Como constructor de equipos que disfruta los desafíos, creo en el poder de la colaboración y el intercambio de conocimientos para crear soluciones centradas en el usuario que mejoran la eficiencia.",
-    "paragraph2": "Actualmente trabajando como Ingeniero de Software en Clip, una plataforma fintech líder en México, aporto perseverancia, capacidad e innovación a cada proyecto. Hago énfasis en la atención al detalle en el diseño de UI y creo en construir aplicaciones que faciliten el trabajo y rendimiento de las personas.",
+    "paragraph1": "Soy un Desarrollador Full Stack JavaScript con más de 8 años de experiencia construyendo aplicaciones web escalables que impactan a miles de usuarios. Como constructor de equipos que disfruta los desafíos, creo en el poder de la colaboración y el intercambio de conocimientos para crear soluciones centradas en el usuario que mejoran la eficiencia. Con 277 repositorios y 922 seguidores, contribuyo activamente a la comunidad de desarrolladores.",
+    "paragraph2": "Actualmente trabajando como Ingeniero de Software en Clip, la plataforma fintech líder de México, aporto perseverancia, capacidad e innovación a cada proyecto. Me especializo en aplicaciones web escalables, arquitectura de microservicios y el ecosistema moderno de JavaScript. Hago énfasis en la atención al detalle en el diseño de UI y creo en construir aplicaciones que faciliten el trabajo y rendimiento de las personas.",
     "location": "Ubicación",
     "locationValue": "Culiacán, Sinaloa, México • Disponible Remoto",
     "community": "Liderazgo en la Comunidad",
-    "communityValue": "Organizador de JSConf México (2023-Presente) • Co-Organizador de EventLoop México • Mentor en Hackademy"
+    "communityValue": "Organizador de JSConf México (500+ desarrolladores, 2023-Presente) • Co-Organizador de EventLoop México • Mentor en Hackademy"
   },
   "experience": {
     "title": "Experiencia Profesional",
@@ -88,48 +88,56 @@
   "skills": {
     "title": "Tecnologías y Habilidades Principales",
     "list": [
-      "JavaScript",
+      "JavaScript (ES2024+)",
       "TypeScript",
       "React.js",
+      "Next.js",
       "Node.js",
       "Express.js",
       "GraphQL",
       "Redux",
-      "Next.js",
       "Jest",
       "Vitest",
       "React Testing Library",
-      "Git",
+      "Git/GitHub",
       "MongoDB",
+      "PostgreSQL",
+      "Prisma",
       "Webpack",
       "HTML5",
-      "Prisma",
-      "PostgreSQL",
       "CSS3",
-      "Material-UI",
       "Tailwind CSS",
+      "Material-UI",
       "Stripe",
-      "Microfrontends",
-      "BDD/TDD",
-      "Local LLMs (Ollama, LM Studio)",
-      "UX/UI Design",
-      "Accessibility"
+      "Arquitectura de Microfrontends",
+      "Microservicios",
+      "APIs RESTful",
+      "TDD/BDD",
+      "LLMs Locales (Ollama, LM Studio)",
+      "Integración de IA/ML",
+      "Diseño UX/UI",
+      "Accesibilidad",
+      "Optimización de Rendimiento",
+      "Diseño Responsivo"
     ]
   },
   "education": {
     "title": "Educación y Certificaciones",
     "degree": "Ingeniería en Sistemas Computacionales - Instituto Tecnológico de Culiacán",
     "years": "2005 - 2010",
-    "certifications": "Certificaciones Recientes (2025)",
+    "certifications": "Certificaciones Recientes (2025) - 16+ Certificaciones Profesionales",
     "certList": [
+      "Certified Mid-Level React Developer",
       "LLMs Locales con Ollama y LM Studio",
       "React Testing Library con Jest/Vitest",
-      "Microfrontends con React",
-      "Guía Completa de Next.js",
-      "Testing en Node.js Express",
+      "Testing Unitario/Integración en Node.js Express",
+      "Arquitectura de Microfrontends",
+      "Dominio del Framework Next.js",
+      "Certificación de Desarrollador React Nivel Medio (LinkedIn Learning)",
       "React.js Hooks Avanzados",
-      "GraphQL y Redux",
-      "Diseño UX/UI y Accesibilidad"
+      "Manejo de Estado con GraphQL y Redux",
+      "Diseño UX/UI y Accesibilidad",
+      "Optimización de Rendimiento y Mejores Prácticas"
     ]
   },
   "footer": {
