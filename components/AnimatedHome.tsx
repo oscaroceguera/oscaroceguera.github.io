@@ -196,7 +196,7 @@ export default function AnimatedHome({
           >
             <div className="rounded-full bg-slate-900 px-6 py-2">
               <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-sm font-semibold text-transparent">
-                ✨ Available for Remote & Relocation
+                ✨ Available for Remote
               </span>
             </div>
           </motion.div>
@@ -219,13 +219,20 @@ export default function AnimatedHome({
           >
             {hero.subtitle}
           </motion.p>
-          <motion.div className="flex flex-wrap justify-center gap-4" variants={fadeInUp}>
+          <motion.div
+            className="flex flex-wrap justify-center gap-4"
+            variants={fadeInUp}
+          >
             <motion.a
               href="https://github.com/oscaroceguera"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-slate-700 to-slate-800 px-6 py-3 font-semibold text-white shadow-lg"
-              whileHover={{ scale: 1.1, rotate: -2, boxShadow: '0 20px 60px rgba(59, 130, 246, 0.4)' }}
+              whileHover={{
+                scale: 1.1,
+                rotate: -2,
+                boxShadow: '0 20px 60px rgba(59, 130, 246, 0.4)',
+              }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10">🐙 {hero.github}</span>
@@ -241,7 +248,11 @@ export default function AnimatedHome({
               target="_blank"
               rel="noopener noreferrer"
               className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 font-semibold text-white shadow-lg"
-              whileHover={{ scale: 1.1, rotate: 2, boxShadow: '0 20px 60px rgba(59, 130, 246, 0.5)' }}
+              whileHover={{
+                scale: 1.1,
+                rotate: 2,
+                boxShadow: '0 20px 60px rgba(59, 130, 246, 0.5)',
+              }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10">💼 {hero.linkedin}</span>
@@ -255,7 +266,11 @@ export default function AnimatedHome({
             <motion.button
               onClick={handleDownloadCV}
               className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-green-600 to-emerald-700 px-6 py-3 font-semibold text-white shadow-lg"
-              whileHover={{ scale: 1.1, y: -3, boxShadow: '0 20px 60px rgba(34, 197, 94, 0.4)' }}
+              whileHover={{
+                scale: 1.1,
+                y: -3,
+                boxShadow: '0 20px 60px rgba(34, 197, 94, 0.4)',
+              }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="relative z-10">📄 {hero.downloadCV}</span>
@@ -313,7 +328,7 @@ export default function AnimatedHome({
               transition={{ duration: 0.3 }}
             >
               <motion.div
-                className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-3xl"
+                className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-3xl"
                 animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.3, 0.5, 0.3],
@@ -387,7 +402,7 @@ export default function AnimatedHome({
                   {skill}
                 </motion.span>
                 <motion.div
-                  className="absolute -bottom-2 -right-2 h-20 w-20 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-2xl"
+                  className="absolute -right-2 -bottom-2 h-20 w-20 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-2xl"
                   animate={{
                     scale: [1, 1.5, 1],
                     opacity: [0.2, 0.4, 0.2],
@@ -432,7 +447,7 @@ export default function AnimatedHome({
               }}
             >
               <motion.div
-                className="absolute -left-10 -top-10 h-40 w-40 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 blur-3xl"
+                className="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 blur-3xl"
                 animate={{
                   scale: [1, 1.3, 1],
                   opacity: [0.3, 0.6, 0.3],
@@ -460,7 +475,7 @@ export default function AnimatedHome({
               }}
             >
               <motion.div
-                className="absolute -bottom-10 -right-10 h-40 w-40 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl"
+                className="absolute -right-10 -bottom-10 h-40 w-40 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl"
                 animate={{
                   scale: [1, 1.3, 1],
                   opacity: [0.3, 0.6, 0.3],
