@@ -1,10 +1,10 @@
 {
   "metadata": {
     "title": "Oscar Oceguera - Full Stack JavaScript Developer",
-    "description": "Professional portfolio of Oscar Eduardo Oceguera Bibriesca, a Full Stack JavaScript Developer with 8+ years of experience specializing in React, Node.js, and modern web technologies. Software Engineer at Clip (Mexico's fintech platform), JSConf México Organizer (500+ developers), and EventLoop Mexico Co-Organizer. 277 repositories, 922 followers, 16+ certifications."
+    "description": "Professional portfolio of Oscar E. Oceguera Bibriesca, a Full Stack JavaScript Developer with 8+ years of experience specializing in React, Node.js, and modern web technologies. Software Engineer at Clip (Mexico's fintech platform), JSConf México Organizer (500+ developers), and EventLoop Mexico Co-Organizer. 277 repositories, 922 followers, 16+ certifications."
   },
   "hero": {
-    "name": "Oscar Eduardo Oceguera Bibriesca",
+    "name": "Oscar E. Oceguera Bibriesca",
     "title": "Full Stack JavaScript Developer",
     "subtitle": "Software Engineer at Clip with 8+ years of experience building scalable web applications serving thousands of users across Mexico. Passionate about tackling technical challenges and sharing knowledge. 922 followers • 277 repositories • Open to remote work.",
     "github": "GitHub",
@@ -141,6 +141,6 @@
     ]
   },
   "footer": {
-    "copyright": "© 2025 Oscar Eduardo Oceguera Bibriesca. All rights reserved."
+    "copyright": "© 2025 Oscar E. Oceguera Bibriesca. All rights reserved."
   }
 }
