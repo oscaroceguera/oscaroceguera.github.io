@@ -127,6 +127,7 @@
     "years": "2005 - 2010",
     "certifications": "Recent Certifications (2025) - 16+ Professional Certifications",
     "certList": [
+      "Claude Code in Action",
       "Certified Mid-Level React Developer",
       "Local LLMs with Ollama & LM Studio",
       "React Testing Library with Jest/Vitest",
