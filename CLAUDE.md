@@ -133,3 +133,4 @@ When working with Framer Motion components in `AnimatedHome.tsx`:
 - Use `whileHover` and `whileTap` for interactive elements
 - Maintain the staggerChildren pattern for list animations
 - Make my page more original and profesional
+- when I write gcc gime the @agent-conventional-commit for my last changes and give me the result like "git commit -m "......"" max 100 characters
