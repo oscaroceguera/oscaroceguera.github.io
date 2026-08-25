@@ -9,6 +9,11 @@ interface Job {
   achievements: string[]
 }
 
+interface SkillGroup {
+  name: string
+  items: string[]
+}
+
 interface CVData {
   name: string
   title: string
@@ -20,7 +25,7 @@ interface CVData {
   aboutParagraph2: string
   community: string
   experience: Job[]
-  skills: string[]
+  skillGroups: SkillGroup[]
   degree: string
   years: string
   certifications: string[]
@@ -28,283 +33,248 @@ interface CVData {
   locale: string
 }
 
+const SKILL_GROUP_LABELS: Record<string, { en: string; es: string }> = {
+  frontend: { en: 'Frontend', es: 'Frontend' },
+  backend: { en: 'Backend', es: 'Backend' },
+  testing: { en: 'Testing', es: 'Testing' },
+  'data-infra': { en: 'Data & Infra', es: 'Datos e Infraestructura' },
+  'ai-ml': { en: 'AI/ML', es: 'IA/ML' },
+  'design-ux': { en: 'Design & UX', es: 'Diseño y UX' },
+}
+
 export function generateCV(data: CVData) {
   const doc = new jsPDF()
   const pageWidth = doc.internal.pageSize.getWidth()
   const pageHeight = doc.internal.pageSize.getHeight()
   const margin = 20
+  const contentWidth = pageWidth - 2 * margin
+  const isEn = data.locale === 'en'
   let yPosition = margin
 
-  // Helper function to add text with word wrapping
+  const dark: [number, number, number] = [23, 23, 23]
+  const text: [number, number, number] = [40, 40, 40]
+  const muted: [number, number, number] = [128, 128, 128]
+  const line: [number, number, number] = [224, 224, 224]
+  const accent: [number, number, number] = [22, 141, 86]
+
+  doc.setFont('courier', 'normal')
+
   const addWrappedText = (
-    text: string,
+    value: string,
     x: number,
     y: number,
     maxWidth: number,
-    lineHeight: number
+    lineHeight: number,
   ) => {
-    const lines = doc.splitTextToSize(text, maxWidth)
+    const lines = doc.splitTextToSize(value, maxWidth)
     doc.text(lines, x, y)
     return y + lines.length * lineHeight
   }
 
-  // Set colors
-  const primaryColor: [number, number, number] = [59, 130, 246] // Blue
-  const darkColor: [number, number, number] = [15, 23, 42] // Dark slate
-  const grayColor: [number, number, number] = [100, 116, 139] // Slate gray
+  const ensureSpace = (needed: number) => {
+    if (yPosition > pageHeight - needed) {
+      doc.addPage()
+      yPosition = margin
+    }
+  }
 
-  // Header - Name and Title
-  doc.setFillColor(...primaryColor)
-  doc.rect(0, 0, pageWidth, 45, 'F')
+  const drawRule = (y: number) => {
+    doc.setDrawColor(...line)
+    doc.setLineWidth(0.2)
+    doc.line(margin, y, pageWidth - margin, y)
+  }
 
-  doc.setTextColor(255, 255, 255)
-  doc.setFontSize(24)
-  doc.setFont('helvetica', 'bold')
-  doc.text(data.name, margin, 20)
+  const sectionLabel = (label: string) => {
+    ensureSpace(30)
+    doc.setTextColor(...muted)
+    doc.setFontSize(10)
+    doc.setFont('courier', 'bold')
+    doc.text(label.toUpperCase(), margin, yPosition)
+    yPosition += 6
+  }
 
-  doc.setFontSize(14)
-  doc.setFont('helvetica', 'normal')
-  doc.text(data.title, margin, 30)
+  // Header
+  doc.setTextColor(...dark)
+  doc.setFontSize(22)
+  doc.setFont('courier', 'bold')
+  doc.text(data.name, margin, yPosition + 4)
+  yPosition += 10
 
-  doc.setFontSize(10)
-  doc.text(data.location, margin, 37)
-
-  yPosition = 55
-
-  // Contact Links
-  doc.setTextColor(...darkColor)
-  doc.setFontSize(10)
-  doc.setFont('helvetica', 'normal')
-  doc.text('GitHub: https://github.com/oscaroceguera', margin, yPosition)
-  doc.text(
-    'LinkedIn: https://linkedin.com/in/oscaroceguerab',
-    margin,
-    yPosition + 6
-  )
-  yPosition += 18
-
-  // Professional Summary Section
-  doc.setTextColor(...primaryColor)
-  doc.setFontSize(14)
-  doc.setFont('helvetica', 'bold')
-  doc.text(data.locale === 'en' ? 'Professional Summary' : 'Resumen Profesional', margin, yPosition)
+  doc.setFontSize(12)
+  doc.setFont('courier', 'normal')
+  doc.setTextColor(...text)
+  doc.text(data.title, margin, yPosition)
   yPosition += 7
 
-  doc.setTextColor(...darkColor)
-  doc.setFontSize(10)
-  doc.setFont('helvetica', 'normal')
+  doc.setFontSize(9)
+  doc.setTextColor(...muted)
+  const contactLine = `${data.location}  ·  ${data.github.replace(/^https?:\/\//, '')}  ·  ${data.linkedin.replace(/^https?:\/\//, '')}`
+  yPosition = addWrappedText(contactLine, margin, yPosition, contentWidth, 4.3)
+  yPosition += 3
+  drawRule(yPosition)
+  yPosition += 10
+
+  // Professional Summary
+  sectionLabel(isEn ? 'Professional Summary' : 'Resumen Profesional')
+  doc.setTextColor(...text)
+  doc.setFontSize(9.5)
+  doc.setFont('courier', 'normal')
   yPosition = addWrappedText(
     data.aboutParagraph1,
     margin,
     yPosition,
-    pageWidth - 2 * margin,
-    5
+    contentWidth,
+    4.3,
   )
-  yPosition += 3
-  yPosition = addWrappedText(
-    data.aboutParagraph2,
-    margin,
-    yPosition,
-    pageWidth - 2 * margin,
-    5
-  )
-  yPosition += 10
+  yPosition += 12
 
-  // Community Leadership Section
-  doc.setTextColor(...primaryColor)
-  doc.setFontSize(14)
-  doc.setFont('helvetica', 'bold')
-  doc.text(data.locale === 'en' ? 'Community Leadership' : 'Liderazgo Comunitario', margin, yPosition)
-  yPosition += 7
-
-  doc.setTextColor(...darkColor)
-  doc.setFontSize(10)
-  doc.setFont('helvetica', 'normal')
-  yPosition = addWrappedText(
-    data.community,
-    margin,
-    yPosition,
-    pageWidth - 2 * margin,
-    5
-  )
-  yPosition += 10
-
-  // Check if we need a new page
-  if (yPosition > pageHeight - 60) {
-    doc.addPage()
-    yPosition = margin
-  }
-
-  // Professional Experience Section
-  doc.setTextColor(...primaryColor)
-  doc.setFontSize(14)
-  doc.setFont('helvetica', 'bold')
-  doc.text(
-    data.locale === 'en' ? 'Professional Experience' : 'Experiencia Profesional',
-    margin,
-    yPosition
-  )
-  yPosition += 7
+  // Experience
+  ensureSpace(60)
+  sectionLabel(isEn ? 'Experience' : 'Experiencia')
 
   data.experience.forEach((job, index) => {
-    // Check if we need a new page
-    if (yPosition > pageHeight - 80) {
-      doc.addPage()
-      yPosition = margin
-    }
+    ensureSpace(45)
 
-    // Company name
-    doc.setTextColor(...darkColor)
     doc.setFontSize(12)
-    doc.setFont('helvetica', 'bold')
+    doc.setFont('courier', 'bold')
+    doc.setTextColor(...dark)
     doc.text(job.company, margin, yPosition)
+    const companyWidth = doc.getTextWidth(job.company)
+
+    doc.setFontSize(10)
+    doc.setFont('courier', 'normal')
+    doc.setTextColor(...muted)
+    doc.text(`  —  ${job.position}`, margin + companyWidth, yPosition)
+
+    doc.setFontSize(8.5)
+    doc.text(job.period, pageWidth - margin, yPosition, { align: 'right' })
+    yPosition += 5
+
+    doc.setFontSize(8.5)
+    doc.setTextColor(...muted)
+    doc.text(job.location, margin, yPosition)
     yPosition += 6
 
-    // Position and period
-    doc.setFontSize(10)
-    doc.setFont('helvetica', 'bold')
-    doc.text(job.position, margin, yPosition)
-
-    doc.setFont('helvetica', 'normal')
-    doc.setTextColor(...grayColor)
-    const periodText = `${job.period} | ${job.location}`
-    doc.text(periodText, margin, yPosition + 5)
-    yPosition += 11
-
-    // Description
-    doc.setTextColor(...darkColor)
-    doc.setFontSize(9)
-    doc.setFont('helvetica', 'normal')
+    doc.setFontSize(9.5)
+    doc.setFont('courier', 'normal')
+    doc.setTextColor(...text)
     yPosition = addWrappedText(
       job.description,
       margin,
       yPosition,
-      pageWidth - 2 * margin,
-      4.5
+      contentWidth,
+      4.3,
     )
-    yPosition += 3
+    yPosition += 2
 
-    // Achievements
-    if (job.achievements && job.achievements.length > 0) {
-      job.achievements.forEach((achievement) => {
-        if (yPosition > pageHeight - margin - 10) {
-          doc.addPage()
-          yPosition = margin
-        }
-        yPosition = addWrappedText(
-          `• ${achievement}`,
-          margin + 3,
-          yPosition,
-          pageWidth - 2 * margin - 3,
-          4.5
-        )
-        yPosition += 1
-      })
-    }
+    job.achievements.forEach((achievement) => {
+      ensureSpace(15)
+      doc.setTextColor(...muted)
+      doc.text('–', margin, yPosition)
+      doc.setTextColor(...text)
+      yPosition = addWrappedText(
+        achievement,
+        margin + 5,
+        yPosition,
+        contentWidth - 5,
+        4.3,
+      )
+    })
 
-    // Add spacing between jobs
-    if (index < data.experience.length - 1) {
-      yPosition += 6
-    } else {
-      yPosition += 8
-    }
+    yPosition += index < data.experience.length - 1 ? 8 : 12
   })
 
-  // Check if we need a new page
-  if (yPosition > pageHeight - 60) {
-    doc.addPage()
-    yPosition = margin
-  }
+  // Skills
+  ensureSpace(50)
+  sectionLabel(isEn ? 'Skills' : 'Habilidades')
 
-  // Technical Skills Section
-  doc.setTextColor(...primaryColor)
-  doc.setFontSize(14)
-  doc.setFont('helvetica', 'bold')
-  doc.text(data.locale === 'en' ? 'Technical Skills' : 'Habilidades Técnicas', margin, yPosition)
-  yPosition += 7
+  data.skillGroups.forEach((group) => {
+    ensureSpace(20)
+    const label = SKILL_GROUP_LABELS[group.name]
+      ? SKILL_GROUP_LABELS[group.name][isEn ? 'en' : 'es']
+      : group.name.charAt(0).toUpperCase() + group.name.slice(1)
 
-  doc.setTextColor(...darkColor)
-  doc.setFontSize(9)
-  doc.setFont('helvetica', 'normal')
+    doc.setFontSize(9.5)
+    doc.setFont('courier', 'bold')
+    doc.setTextColor(...dark)
+    doc.text(label, margin, yPosition)
+    yPosition += 4.3
 
-  // Display skills in columns
-  const skillsPerColumn = Math.ceil(data.skills.length / 3)
-  const columnWidth = (pageWidth - 2 * margin) / 3
-  let column = 0
-  let skillIndex = 0
-
-  data.skills.forEach((skill) => {
-    const xPos = margin + column * columnWidth
-    const yPos = yPosition + (skillIndex * 5)
-
-    doc.setFillColor(240, 240, 240)
-    doc.roundedRect(xPos, yPos - 3, columnWidth - 5, 5, 1, 1, 'F')
-    doc.text(`• ${skill}`, xPos + 2, yPos)
-
-    skillIndex++
-    if (skillIndex >= skillsPerColumn) {
-      skillIndex = 0
-      column++
-    }
+    doc.setFont('courier', 'normal')
+    doc.setTextColor(...text)
+    yPosition = addWrappedText(
+      group.items.join(', '),
+      margin,
+      yPosition,
+      contentWidth,
+      4.3,
+    )
+    yPosition += 4
   })
 
-  yPosition += skillsPerColumn * 5 + 10
+  yPosition += 6
 
-  // Check if we need a new page
-  if (yPosition > pageHeight - 50) {
-    doc.addPage()
-    yPosition = margin
-  }
+  // Education
+  ensureSpace(45)
+  sectionLabel(isEn ? 'Education' : 'Educación')
 
-  // Education Section
-  doc.setTextColor(...primaryColor)
-  doc.setFontSize(14)
-  doc.setFont('helvetica', 'bold')
-  doc.text(data.locale === 'en' ? 'Education' : 'Educación', margin, yPosition)
-  yPosition += 7
-
-  doc.setTextColor(...darkColor)
-  doc.setFontSize(10)
-  doc.setFont('helvetica', 'bold')
+  doc.setFontSize(10.5)
+  doc.setFont('courier', 'bold')
+  doc.setTextColor(...dark)
   doc.text(data.degree, margin, yPosition)
-  yPosition += 5
 
-  doc.setFont('helvetica', 'normal')
-  doc.setTextColor(...grayColor)
-  doc.text(data.years, margin, yPosition)
+  doc.setFontSize(8.5)
+  doc.setFont('courier', 'normal')
+  doc.setTextColor(...muted)
+  doc.text(data.years, pageWidth - margin, yPosition, { align: 'right' })
   yPosition += 10
 
-  // Certifications Section
-  doc.setTextColor(...primaryColor)
-  doc.setFontSize(14)
-  doc.setFont('helvetica', 'bold')
-  doc.text(data.locale === 'en' ? 'Recent Certifications' : 'Certificaciones Recientes', margin, yPosition)
-  yPosition += 7
-
-  doc.setTextColor(...darkColor)
-  doc.setFontSize(9)
-  doc.setFont('helvetica', 'normal')
+  // Certifications
+  ensureSpace(35)
+  sectionLabel(isEn ? 'Certifications' : 'Certificaciones')
 
   data.certifications.forEach((cert) => {
-    if (yPosition > pageHeight - margin) {
-      doc.addPage()
-      yPosition = margin
-    }
-    doc.text(`✓ ${cert}`, margin + 2, yPosition)
-    yPosition += 5
+    ensureSpace(12)
+    doc.setFillColor(...accent)
+    doc.circle(margin + 0.8, yPosition - 1.2, 0.8, 'F')
+    doc.setFontSize(9.5)
+    doc.setFont('courier', 'normal')
+    doc.setTextColor(...text)
+    yPosition = addWrappedText(
+      cert,
+      margin + 5,
+      yPosition,
+      contentWidth - 5,
+      4.3,
+    )
+    yPosition += 1
   })
 
-  // Footer
-  doc.setFontSize(8)
-  doc.setTextColor(...grayColor)
-  doc.text(
-    `Generated on ${new Date().toLocaleDateString(data.locale === 'en' ? 'en-US' : 'es-MX', { year: 'numeric', month: 'long', day: 'numeric' })}`,
-    pageWidth / 2,
-    pageHeight - 10,
-    { align: 'center' }
-  )
+  yPosition += 8
 
-  // Save the PDF
+  // Community Leadership
+  ensureSpace(30)
+  sectionLabel(isEn ? 'Community Leadership' : 'Liderazgo Comunitario')
+  doc.setFontSize(9.5)
+  doc.setFont('courier', 'normal')
+  doc.setTextColor(...text)
+  addWrappedText(data.community, margin, yPosition, contentWidth, 4.3)
+
+  // Footer on every page
+  const pageCount = doc.getNumberOfPages()
+  for (let i = 1; i <= pageCount; i++) {
+    doc.setPage(i)
+    doc.setFontSize(7.5)
+    doc.setFont('courier', 'normal')
+    doc.setTextColor(...muted)
+    doc.text(
+      `Generated on ${new Date().toLocaleDateString(isEn ? 'en-US' : 'es-MX', { year: 'numeric', month: 'long', day: 'numeric' })}`,
+      pageWidth / 2,
+      pageHeight - 10,
+      { align: 'center' },
+    )
+  }
+
   const fileName = `Oscar_Oceguera_CV_${data.locale.toUpperCase()}.pdf`
   doc.save(fileName)
 }

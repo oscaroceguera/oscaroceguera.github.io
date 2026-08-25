@@ -1,14 +1,16 @@
 'use client'
 
-import { motion } from 'framer-motion'
-
+import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { generateCV } from '@/lib/generateCV'
 import type { Locale } from '@/lib/locales'
 
 interface Hero {
   name: string
   title: string
+  roleLine: string
   subtitle: string
+  availability: string
+  highlights: string[]
   github: string
   linkedin: string
   downloadCV: string
@@ -38,9 +40,15 @@ interface Experience {
   jobs: Job[]
 }
 
+interface SkillGroup {
+  name: string
+  items: string[]
+}
+
 interface Skills {
   title: string
   list: string[]
+  groups: SkillGroup[]
 }
 
 interface Education {
@@ -65,6 +73,34 @@ interface AnimatedHomeProps {
   locale: Locale
 }
 
+const GitHubIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+  </svg>
+)
+
+const LinkedInIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+  </svg>
+)
+
+const DownloadIcon = () => (
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 20 20"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.6"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M10 3v10m0 0l-4-4m4 4l4-4" />
+    <path d="M3 15v1.5A1.5 1.5 0 004.5 18h11a1.5 1.5 0 001.5-1.5V15" />
+  </svg>
+)
+
 export default function AnimatedHome({
   hero,
   about,
@@ -86,7 +122,7 @@ export default function AnimatedHome({
       aboutParagraph2: about.paragraph2,
       community: about.communityValue,
       experience: experience.jobs,
-      skills: skills.list,
+      skillGroups: skills.groups,
       degree: education.degree,
       years: education.years,
       certifications: education.certList,
@@ -94,497 +130,502 @@ export default function AnimatedHome({
       locale,
     })
   }
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.1,
-      },
-    },
-  }
-
-  const slideFromLeft = {
-    hidden: { opacity: 0, x: -100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8 },
-    },
-  }
-
-  const slideFromRight = {
-    hidden: { opacity: 0, x: 100 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.8 },
-    },
-  }
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.7 },
-    },
-  }
-
-  const scaleRotate = {
-    hidden: { opacity: 0, scale: 0.5, rotate: -10 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      rotate: 0,
-      transition: { duration: 0.6 },
-    },
-  }
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30, rotateX: 45 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      rotateX: 0,
-      transition: { duration: 0.6 },
-    },
-  }
 
   return (
-    <>
-      {/* Animated Background Gradient */}
-      <motion.div
-        className="pointer-events-none fixed inset-0 z-0"
-        animate={{
-          background: [
-            'radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 80% 70%, rgba(147, 51, 234, 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 40% 80%, rgba(34, 211, 238, 0.15) 0%, transparent 50%)',
-            'radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%)',
-          ],
+    <div
+      style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}
+    >
+      {/* NAV */}
+      <div
+        className="nav"
+        style={{
+          position: 'sticky',
+          top: 0,
+          zIndex: 20,
+          background: 'oklch(99% 0 0 / 0.92)',
+          backdropFilter: 'blur(6px)',
+          borderBottom: '1px solid var(--line)',
         }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: 'linear',
-        }}
-      />
-
-      {/* Hero Section */}
-      <motion.section
-        className="relative z-10 mx-auto max-w-6xl px-6 py-20"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariants}
       >
-        <div className="flex flex-col items-center text-center">
-          <motion.div
-            className="mb-6 inline-block rounded-full bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 p-1"
-            variants={scaleRotate}
-            animate={{
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: 'linear',
-            }}
-          >
-            <div className="rounded-full bg-slate-900 px-6 py-2">
-              <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-sm font-semibold text-transparent">
-                ✨ Available for Remote
-              </span>
-            </div>
-          </motion.div>
-          <motion.h1
-            className="mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-5xl font-bold text-transparent sm:text-7xl"
-            variants={scaleRotate}
-            whileHover={{ scale: 1.05 }}
-          >
-            {hero.name}
-          </motion.h1>
-          <motion.p
-            className="mb-8 text-2xl text-slate-300 sm:text-3xl"
-            variants={fadeInUp}
-          >
-            {hero.title}
-          </motion.p>
-          <motion.p
-            className="mb-8 max-w-2xl text-lg text-slate-400"
-            variants={fadeInUp}
-          >
-            {hero.subtitle}
-          </motion.p>
-          <motion.div
-            className="flex flex-wrap justify-center gap-4"
-            variants={fadeInUp}
-          >
-            <motion.a
-              href="https://github.com/oscaroceguera"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-slate-700 to-slate-800 px-6 py-3 font-semibold text-white shadow-lg"
-              whileHover={{
-                scale: 1.1,
-                rotate: -2,
-                boxShadow: '0 20px 60px rgba(59, 130, 246, 0.4)',
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">🐙 {hero.github}</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
-            <motion.a
-              href="https://www.linkedin.com/in/oscaroceguerab"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 font-semibold text-white shadow-lg"
-              whileHover={{
-                scale: 1.1,
-                rotate: 2,
-                boxShadow: '0 20px 60px rgba(59, 130, 246, 0.5)',
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">💼 {hero.linkedin}</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
-            <motion.button
-              onClick={handleDownloadCV}
-              className="group relative overflow-hidden rounded-lg bg-gradient-to-r from-green-600 to-emerald-700 px-6 py-3 font-semibold text-white shadow-lg"
-              whileHover={{
-                scale: 1.1,
-                y: -3,
-                boxShadow: '0 20px 60px rgba(34, 197, 94, 0.4)',
-              }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">📄 {hero.downloadCV}</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-600"
-                initial={{ x: '-100%' }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.button>
-          </motion.div>
+        <div style={{ fontSize: '13px', fontWeight: 600 }}>
+          oscar-oceguera.dev
         </div>
-      </motion.section>
+        <div className="nav-links">
+          <a href="#about" className="no-line">
+            [about]
+          </a>
+          <a href="#experience" className="no-line">
+            [experience]
+          </a>
+          <a href="#skills" className="no-line">
+            [skills]
+          </a>
+          <a href="#education" className="no-line">
+            [education]
+          </a>
+          <LanguageSwitcher currentLocale={locale} />
+        </div>
+      </div>
 
-      {/* About Section */}
-      <motion.section
-        className="relative z-10 bg-slate-800/50 py-16 backdrop-blur-sm"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
-      >
-        <div className="mx-auto max-w-6xl px-6">
-          <motion.h2
-            className="mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-3xl font-bold text-transparent"
-            variants={fadeInUp}
-          >
-            {about.title}
-          </motion.h2>
-          <div className="grid gap-8 md:grid-cols-2">
-            <motion.div variants={slideFromLeft}>
-              <motion.p
-                className="mb-4 text-lg leading-relaxed text-slate-300"
-                whileHover={{ x: 10, color: '#cbd5e1' }}
-                transition={{ duration: 0.2 }}
-              >
-                {about.paragraph1}
-              </motion.p>
-              <motion.p
-                className="text-lg leading-relaxed text-slate-300"
-                whileHover={{ x: 10, color: '#cbd5e1' }}
-                transition={{ duration: 0.2 }}
-              >
-                {about.paragraph2}
-              </motion.p>
-            </motion.div>
-            <motion.div
-              className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-slate-700/50 to-slate-800/50 p-6 shadow-xl"
-              variants={slideFromRight}
-              whileHover={{
-                scale: 1.05,
-                rotate: 1,
-                boxShadow: '0 20px 60px rgba(59, 130, 246, 0.3)',
+      {/* HERO */}
+      <div style={{ padding: '88px var(--pad-x) 80px', maxWidth: '880px' }}>
+        <div
+          style={{
+            fontSize: '12px',
+            color: 'var(--muted)',
+            marginBottom: '14px',
+          }}
+        >
+          $ whoami<span className="cursor">_</span>
+        </div>
+        <h1 style={{ fontSize: '42px', lineHeight: 1.28 }}>{hero.name}</h1>
+        <div
+          style={{
+            fontSize: '16px',
+            color: 'oklch(48% 0 0)',
+            marginTop: '8px',
+          }}
+        >
+          {hero.roleLine}
+        </div>
+        <p
+          style={{
+            fontSize: '14px',
+            lineHeight: 1.7,
+            color: 'oklch(32% 0 0)',
+            maxWidth: '620px',
+            marginTop: '22px',
+          }}
+        >
+          {hero.subtitle}
+        </p>
+
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            marginTop: '22px',
+          }}
+        >
+          <span
+            style={{
+              width: '7px',
+              height: '7px',
+              borderRadius: '50%',
+              background: 'var(--accent)',
+              flexShrink: 0,
+            }}
+          />
+          <span style={{ fontSize: '12px', color: 'oklch(40% 0 0)' }}>
+            {hero.availability}
+          </span>
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '6px',
+            marginTop: '20px',
+          }}
+        >
+          {hero.highlights.map((item) => (
+            <span
+              key={item}
+              style={{
+                border: '1px solid var(--foreground)',
+                padding: '5px 10px',
+                fontSize: '11px',
               }}
-              transition={{ duration: 0.3 }}
             >
-              <motion.div
-                className="absolute -top-10 -right-10 h-40 w-40 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-3xl"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.3, 0.5, 0.3],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
-              <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-white">
-                <span className="text-2xl">📍</span>
-                {about.location}
-              </h3>
-              <p className="mb-4 text-slate-300">{about.locationValue}</p>
-              <h3 className="mb-4 flex items-center gap-2 text-xl font-semibold text-white">
-                <span className="text-2xl">👥</span>
-                {about.community}
-              </h3>
-              <p className="text-slate-300">{about.communityValue}</p>
-            </motion.div>
+              {item}
+            </span>
+          ))}
+        </div>
+
+        <div style={{ display: 'flex', gap: '10px', marginTop: '30px' }}>
+          <a
+            href="https://github.com/oscaroceguera"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-line"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '11px 18px',
+              background: 'var(--foreground)',
+              color: 'var(--background)',
+              fontSize: '12px',
+              fontWeight: 600,
+            }}
+          >
+            <GitHubIcon />
+            ./{hero.github.toLowerCase()}
+          </a>
+          <a
+            href="https://www.linkedin.com/in/oscaroceguerab"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-line"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '11px 18px',
+              border: '1px solid var(--foreground)',
+              fontSize: '12px',
+              fontWeight: 600,
+            }}
+          >
+            <LinkedInIcon />
+            ./{hero.linkedin.toLowerCase()}
+          </a>
+          <button
+            onClick={handleDownloadCV}
+            type="button"
+            className="no-line"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '11px 18px',
+              fontSize: '12px',
+              fontWeight: 600,
+              color: 'var(--muted)',
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+            }}
+          >
+            <DownloadIcon />
+            ./resume.pdf
+          </button>
+        </div>
+      </div>
+
+      {/* ABOUT */}
+      <div
+        id="about"
+        style={{
+          padding: 'var(--pad-x)',
+          borderTop: '1px solid var(--line)',
+          maxWidth: '880px',
+        }}
+      >
+        <div
+          style={{
+            fontSize: '12px',
+            color: 'var(--muted)',
+            marginBottom: '18px',
+          }}
+        >
+          $ cat about.md
+        </div>
+        <p
+          style={{
+            fontSize: '14px',
+            lineHeight: 1.75,
+            color: 'oklch(28% 0 0)',
+          }}
+        >
+          {about.paragraph1}
+        </p>
+        <p
+          style={{
+            fontSize: '14px',
+            lineHeight: 1.75,
+            color: 'oklch(28% 0 0)',
+            marginTop: '16px',
+          }}
+        >
+          {about.paragraph2}
+        </p>
+        <div
+          style={{
+            marginTop: '26px',
+            border: '1px solid var(--line)',
+            fontSize: '12.5px',
+          }}
+        >
+          <div
+            className="kv-row"
+            style={{ borderBottom: '1px solid oklch(90% 0 0)' }}
+          >
+            <span className="kv-label" style={{ color: 'var(--muted)' }}>
+              {about.location.toLowerCase()}:
+            </span>
+            <span>{about.locationValue}</span>
+          </div>
+          <div className="kv-row">
+            <span className="kv-label" style={{ color: 'var(--muted)' }}>
+              {about.community.toLowerCase()}:
+            </span>
+            <span>{about.communityValue}</span>
           </div>
         </div>
-      </motion.section>
+      </div>
 
-      {/* Skills Section */}
-      <motion.section
-        className="relative z-10 py-16"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.15 }}
-        variants={containerVariants}
+      {/* EXPERIENCE */}
+      <div
+        id="experience"
+        style={{
+          padding: 'var(--pad-x)',
+          borderTop: '1px solid var(--line)',
+          background: 'oklch(97.5% 0 0)',
+        }}
       >
-        <div className="mx-auto max-w-6xl px-6">
-          <motion.h2
-            className="mb-8 bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-3xl font-bold text-transparent"
-            variants={fadeInUp}
-          >
-            {skills.title}
-          </motion.h2>
-          <motion.div
-            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-            variants={containerVariants}
-          >
-            {skills.list.map((skill, index) => (
-              <motion.div
-                key={skill}
-                className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-slate-700/50 to-slate-800/50 px-6 py-4 text-center text-slate-200 shadow-lg backdrop-blur-sm"
-                variants={cardVariants}
-                whileHover={{
-                  scale: 1.1,
-                  rotate: [0, -2, 2, 0],
-                  boxShadow: '0 20px 40px rgba(59, 130, 246, 0.4)',
+        <div
+          style={{
+            fontSize: '12px',
+            color: 'var(--muted)',
+            marginBottom: '18px',
+          }}
+        >
+          $ git log --oneline experience/
+        </div>
+        <div
+          style={{
+            maxWidth: '880px',
+            border: '1px solid var(--line)',
+            background: 'var(--background)',
+          }}
+        >
+          {experience.jobs.map((job, index) => (
+            <div
+              key={job.company + job.period}
+              className="row job-row"
+              style={{
+                borderBottom:
+                  index < experience.jobs.length - 1
+                    ? '1px solid oklch(90% 0 0)'
+                    : 'none',
+              }}
+            >
+              <div
+                className="job-period"
+                style={{
+                  fontSize: '12px',
+                  color: 'var(--muted)',
+                  paddingTop: '2px',
                 }}
-                whileTap={{ scale: 0.95 }}
-                custom={index}
               >
-                <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-purple-500/20 to-cyan-500/0"
-                  initial={{ x: '-100%' }}
-                  whileHover={{ x: '100%' }}
-                  transition={{ duration: 0.6 }}
-                />
-                <motion.span
-                  className="relative z-10 font-medium"
-                  whileHover={{
-                    color: '#60a5fa',
-                    textShadow: '0 0 8px rgba(96, 165, 250, 0.5)',
+                {job.period}
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div
+                  style={{
+                    display: 'flex',
+                    alignItems: 'baseline',
+                    gap: '10px',
+                    flexWrap: 'wrap',
                   }}
                 >
-                  {skill}
-                </motion.span>
-                <motion.div
-                  className="absolute -right-2 -bottom-2 h-20 w-20 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 blur-2xl"
-                  animate={{
-                    scale: [1, 1.5, 1],
-                    opacity: [0.2, 0.4, 0.2],
+                  <span style={{ fontSize: '15px', fontWeight: 600 }}>
+                    {job.company}
+                  </span>
+                  <span style={{ fontSize: '12.5px', color: 'oklch(48% 0 0)' }}>
+                    {job.position}
+                  </span>
+                </div>
+                <div
+                  style={{
+                    fontSize: '11.5px',
+                    color: 'oklch(58% 0 0)',
+                    marginTop: '3px',
                   }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                    delay: index * 0.1,
+                >
+                  {job.location}
+                </div>
+                <p
+                  style={{
+                    fontSize: '13px',
+                    lineHeight: 1.6,
+                    color: 'oklch(32% 0 0)',
+                    margin: '8px 0 0',
                   }}
-                />
-              </motion.div>
-            ))}
-          </motion.div>
+                >
+                  {job.description}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
-      </motion.section>
+      </div>
 
-      {/* Education & Certifications */}
-      <motion.section
-        className="relative z-10 bg-slate-800/50 py-16 backdrop-blur-sm"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={containerVariants}
+      {/* SKILLS */}
+      <div
+        id="skills"
+        style={{ padding: 'var(--pad-x)', borderTop: '1px solid var(--line)' }}
       >
-        <div className="mx-auto max-w-6xl px-6">
-          <motion.h2
-            className="mb-8 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-3xl font-bold text-transparent"
-            variants={fadeInUp}
-          >
-            {education.title}
-          </motion.h2>
-          <div className="space-y-6">
-            <motion.div
-              className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-slate-700/50 to-slate-800/50 p-6 shadow-xl"
-              variants={slideFromLeft}
-              whileHover={{
-                scale: 1.03,
-                x: 15,
-                rotate: 1,
-                boxShadow: '0 20px 60px rgba(59, 130, 246, 0.3)',
-              }}
-            >
-              <motion.div
-                className="absolute -top-10 -left-10 h-40 w-40 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 blur-3xl"
-                animate={{
-                  scale: [1, 1.3, 1],
-                  opacity: [0.3, 0.6, 0.3],
+        <div
+          style={{
+            fontSize: '12px',
+            color: 'var(--muted)',
+            marginBottom: '18px',
+          }}
+        >
+          $ ls skills/
+        </div>
+        <div
+          style={{
+            maxWidth: '880px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '22px',
+          }}
+        >
+          {skills.groups.map((group) => (
+            <div key={group.name}>
+              <div
+                style={{
+                  fontSize: '12.5px',
+                  fontWeight: 600,
+                  marginBottom: '9px',
                 }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                }}
-              />
-              <h3 className="relative mb-2 flex items-center gap-2 text-xl font-semibold text-white">
-                <span className="text-2xl">🎓</span>
-                {education.degree}
-              </h3>
-              <p className="relative text-slate-300">{education.years}</p>
-            </motion.div>
-            <motion.div
-              className="group relative overflow-hidden rounded-lg bg-gradient-to-br from-slate-700/50 to-slate-800/50 p-6 shadow-xl"
-              variants={slideFromRight}
-              whileHover={{
-                scale: 1.03,
-                x: -15,
-                rotate: -1,
-                boxShadow: '0 20px 60px rgba(147, 51, 234, 0.3)',
-              }}
-            >
-              <motion.div
-                className="absolute -right-10 -bottom-10 h-40 w-40 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 blur-3xl"
-                animate={{
-                  scale: [1, 1.3, 1],
-                  opacity: [0.3, 0.6, 0.3],
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                  delay: 1,
-                }}
-              />
-              <h3 className="relative mb-4 flex items-center gap-2 text-xl font-semibold text-white">
-                <span className="text-2xl">🏆</span>
-                {education.certifications}
-              </h3>
-              <motion.ul
-                className="relative space-y-2 text-slate-300"
-                variants={containerVariants}
               >
-                {education.certList.map((cert, index) => (
-                  <motion.li
-                    key={cert}
-                    variants={fadeInUp}
-                    custom={index}
-                    className="flex items-start gap-2"
-                    whileHover={{
-                      x: 10,
-                      color: '#60a5fa',
-                      textShadow: '0 0 8px rgba(96, 165, 250, 0.5)',
+                {group.name}/
+              </div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+                {group.items.map((skill) => (
+                  <div
+                    key={skill}
+                    style={{
+                      border: '1px solid oklch(85% 0 0)',
+                      padding: '6px 11px',
+                      fontSize: '12px',
+                      color: 'oklch(30% 0 0)',
                     }}
                   >
-                    <span className="mt-1 text-blue-400">✓</span>
-                    <span>{cert}</span>
-                  </motion.li>
+                    {skill}
+                  </div>
                 ))}
-              </motion.ul>
-            </motion.div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* EDUCATION */}
+      <div
+        id="education"
+        style={{
+          padding: 'var(--pad-x)',
+          borderTop: '1px solid var(--line)',
+          background: 'oklch(97.5% 0 0)',
+        }}
+      >
+        <div
+          style={{
+            fontSize: '12px',
+            color: 'var(--muted)',
+            marginBottom: '18px',
+          }}
+        >
+          $ cat certifications.json
+        </div>
+        <div
+          style={{
+            maxWidth: '880px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '32px',
+          }}
+        >
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'baseline',
+              gap: '16px',
+              flexWrap: 'wrap',
+            }}
+          >
+            <span style={{ fontSize: '15px', fontWeight: 600 }}>
+              {education.degree}
+            </span>
+            <span style={{ fontSize: '12.5px', color: 'var(--muted)' }}>
+              {education.years}
+            </span>
+          </div>
+          <div>
+            <div
+              style={{
+                fontSize: '12px',
+                color: 'var(--muted)',
+                marginBottom: '12px',
+              }}
+            >
+              {'// '}
+              {education.certifications}
+            </div>
+            <div
+              style={{
+                border: '1px solid var(--line)',
+                background: 'var(--background)',
+              }}
+            >
+              {education.certList.map((cert, index) => (
+                <div
+                  key={cert}
+                  className="row"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    padding: '12px 16px',
+                    borderBottom:
+                      index < education.certList.length - 1
+                        ? '1px solid oklch(91% 0 0)'
+                        : 'none',
+                    fontSize: '13px',
+                  }}
+                >
+                  <span style={{ color: 'var(--accent)', flexShrink: 0 }}>
+                    [x]
+                  </span>
+                  <span style={{ color: 'oklch(28% 0 0)' }}>{cert}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-      </motion.section>
+      </div>
 
-      {/* Footer */}
-      <motion.footer
-        className="relative z-10 border-t border-slate-700/50 py-8 text-center backdrop-blur-sm"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+      {/* FOOTER */}
+      <div
+        style={{
+          marginTop: 'auto',
+          padding: '32px var(--pad-x)',
+          borderTop: '1px solid var(--line)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          fontSize: '12px',
+          color: 'var(--muted)',
+        }}
       >
-        <motion.div
-          className="mx-auto max-w-6xl px-6"
-          whileHover={{ scale: 1.02 }}
-        >
-          <p className="bg-gradient-to-r from-slate-400 via-slate-300 to-slate-400 bg-clip-text text-transparent">
-            {footer.copyright}
-          </p>
-          <motion.div
-            className="mt-4 flex justify-center gap-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
+        <div>{footer.copyright}</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <a
+            href="https://github.com/oscaroceguera"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-line"
           >
-            <motion.a
-              href="https://github.com/oscaroceguera"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 transition-colors hover:text-blue-400"
-              whileHover={{ scale: 1.2, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <span className="text-2xl">🐙</span>
-            </motion.a>
-            <motion.a
-              href="https://www.linkedin.com/in/oscaroceguerab"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 transition-colors hover:text-blue-400"
-              whileHover={{ scale: 1.2, rotate: -5 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <span className="text-2xl">💼</span>
-            </motion.a>
-          </motion.div>
-        </motion.div>
-      </motion.footer>
-
-      {/* Floating Particles */}
-      {Array.from({ length: 20 }).map((_, i) => (
-        <motion.div
-          key={i}
-          className="pointer-events-none fixed z-0 h-2 w-2 rounded-full bg-blue-500/20"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
-            scale: [1, 1.5, 1],
-            opacity: [0.2, 0.5, 0.2],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            delay: Math.random() * 2,
-            ease: 'easeInOut',
-          }}
-        />
-      ))}
-    </>
+            ./{hero.github.toLowerCase()}
+          </a>
+          <a
+            href="https://www.linkedin.com/in/oscaroceguerab"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-line"
+          >
+            ./{hero.linkedin.toLowerCase()}
+          </a>
+        </div>
+      </div>
+    </div>
   )
 }
