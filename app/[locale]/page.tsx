@@ -1,5 +1,4 @@
 import AnimatedHome from '@/components/AnimatedHome'
-import LanguageSwitcher from '@/components/LanguageSwitcher'
 import { getDictionary, isValidLocale } from '@/lib/i18n'
 import type { Locale } from '@/lib/locales'
 import { defaultLocale, locales } from '@/lib/locales'
@@ -20,7 +19,10 @@ export default async function Home({
   const hero = dict.hero as {
     name: string
     title: string
+    roleLine: string
     subtitle: string
+    availability: string
+    highlights: string[]
     github: string
     linkedin: string
     downloadCV: string
@@ -34,7 +36,7 @@ export default async function Home({
     community: string
     communityValue: string
   }
-  const experience = (dict.experience as unknown) as {
+  const experience = dict.experience as unknown as {
     title: string
     jobs: Array<{
       company: string
@@ -45,7 +47,11 @@ export default async function Home({
       achievements: string[]
     }>
   }
-  const skills = dict.skills as { title: string; list: string[] }
+  const skills = dict.skills as {
+    title: string
+    list: string[]
+    groups: { name: string; items: string[] }[]
+  }
   const education = dict.education as {
     title: string
     degree: string
@@ -56,20 +62,14 @@ export default async function Home({
   const footer = dict.footer as { copyright: string }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Language Switcher */}
-      <LanguageSwitcher currentLocale={locale} />
-
-      {/* Animated Content */}
-      <AnimatedHome
-        hero={hero}
-        about={about}
-        experience={experience}
-        skills={skills}
-        education={education}
-        footer={footer}
-        locale={locale}
-      />
-    </div>
+    <AnimatedHome
+      hero={hero}
+      about={about}
+      experience={experience}
+      skills={skills}
+      education={education}
+      footer={footer}
+      locale={locale}
+    />
   )
 }

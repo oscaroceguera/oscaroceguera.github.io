@@ -1,12 +1,15 @@
 {
   "metadata": {
     "title": "Oscar Oceguera - Desarrollador Full Stack JavaScript",
-    "description": "Portafolio profesional de Oscar E. Oceguera Bibriesca, Desarrollador Full Stack JavaScript con más de 8 años de experiencia especializado en React, Node.js y tecnologías web modernas. Ingeniero de Software en Clip (plataforma fintech de México), Organizador de JSConf México (500+ desarrolladores) y Co-Organizador de EventLoop México. 277 repositorios, 922 seguidores, 16+ certificaciones."
+    "description": "Portafolio profesional de Oscar E. Oceguera Bibriesca, Desarrollador Full Stack JavaScript con más de 8 años de experiencia especializado en React, Node.js y tecnologías web modernas. Ingeniero de Software en Clip (plataforma fintech de México), Organizador de JSConf México (500+ desarrolladores) y Co-Organizador de EventLoop México. 277 repositorios, 922 seguidores, 26 certificaciones."
   },
   "hero": {
     "name": "Oscar E. Oceguera Bibriesca",
     "title": "Desarrollador Full Stack JavaScript",
+    "roleLine": "Desarrollador Full Stack JavaScript — Sr. Software Engineer @ Clip",
     "subtitle": "Ingeniero de Software en Clip con más de 8 años de experiencia construyendo aplicaciones web escalables que sirven a miles de usuarios en México. Apasionado por enfrentar desafíos técnicos y compartir conocimiento. 922 seguidores • 277 repositorios • Disponible para trabajo remoto.",
+    "availability": "disponible para trabajo remoto",
+    "highlights": ["React.js", "Node.js", "Next.js", "AWS", "TypeScript"],
     "github": "GitHub",
     "linkedin": "LinkedIn",
     "downloadCV": "Descargar CV"
@@ -25,62 +28,62 @@
     "jobs": [
       {
         "company": "Clip",
-        "position": "Ingeniero de Software",
-        "period": "2020 - Presente",
-        "location": "Ciudad de México, México (Remoto)",
-        "description": "Liderando iniciativas de desarrollo frontend en la plataforma fintech líder de México, construyendo soluciones de pago escalables que sirven a miles de comerciantes en todo el país. Arquitecturando e implementando aplicaciones web modernas usando React, Next.js y TypeScript.",
+        "position": "Sr. Software Engineer",
+        "period": "Dic 2020 - Presente",
+        "location": "Culiacán, Sinaloa, México (Remoto)",
+        "description": "Construyendo aplicaciones web escalables para la plataforma fintech líder de México, sirviendo a miles de comerciantes en todo el país usando React.js, Node.js, microservicios y AWS.",
         "achievements": [
-          "Arquitecturé y desarrollé funcionalidades principales de la plataforma procesando millones en transacciones",
-          "Implementé arquitectura de microfrontends reduciendo tiempo de despliegue en 40%",
-          "Lideré migración de código legacy a stack moderno React/Next.js",
-          "Establecí estándares de testing logrando 85%+ de cobertura con Jest y React Testing Library",
-          "Mentoría de equipo de 5+ desarrolladores junior y revisiones exhaustivas de código",
-          "Colaboré con equipos de producto, diseño y backend para entregar soluciones centradas en el usuario"
+          "Construyo y mantengo funcionalidades principales del frontend de la plataforma fintech de Clip usando React.js y JavaScript moderno",
+          "Desarrollo e integro microservicios en Node.js que dan soporte a productos de pago orientados a comerciantes",
+          "Trabajo dentro de la infraestructura de AWS para desplegar y escalar funcionalidades de la plataforma",
+          "Contribuyo a iniciativas de arquitectura de microfrontends",
+          "Aplico prácticas de testing con Jest y React Testing Library para mantener la calidad del código",
+          "Colaboro con equipos de producto, diseño y backend en soluciones orientadas a comerciantes"
         ]
       },
       {
-        "company": "Empresas Tecnológicas",
-        "position": "Desarrollador Full Stack Senior",
-        "period": "2017 - 2020",
+        "company": "Paxico Technologies",
+        "position": "Full Stack JavaScript Engineer",
+        "period": "May 2020 - Dic 2020",
+        "location": "México",
+        "description": "Desarrollo full stack usando React.js y Node.js.",
+        "achievements": [
+          "Construí funcionalidades full-stack usando React.js y Node.js",
+          "Colaboré con el equipo usando flujos de trabajo basados en Git",
+          "Contribuí a lo largo del stack de JavaScript, desde interfaces de front-end hasta servicios backend"
+        ]
+      },
+      {
+        "company": "GTA (Global Technology Associates)",
+        "position": "Desarrollador Front-end",
+        "period": "Jun 2019 - May 2020",
+        "location": "México",
+        "description": "Desarrollo front-end con React.js.",
+        "achievements": [
+          "Desarrollé interfaces de front-end con React.js",
+          "Trabajé dentro de flujos de control de versiones basados en Git"
+        ]
+      },
+      {
+        "company": "Cultura Colectiva",
+        "position": "Desarrollador Full Stack",
+        "period": "Oct 2018 - Jun 2019",
         "location": "Ciudad de México, México",
-        "description": "Desarrollé aplicaciones web empresariales y APIs REST para diversos clientes en sectores fintech, e-commerce y SaaS. Especializado en desarrollo full-stack JavaScript con React, Node.js y GraphQL.",
+        "description": "Desarrollo full stack para una plataforma de medios digitales.",
         "achievements": [
-          "Construí y desplegué 10+ aplicaciones en producción sirviendo a 50,000+ usuarios",
-          "Implementé APIs GraphQL reduciendo sobre-obtención de datos en 60%",
-          "Diseñé y desarrollé arquitectura de microservicios con Node.js y Express",
-          "Integré pasarelas de pago (Stripe, PayPal) para plataformas e-commerce",
-          "Reduje tiempo de carga de aplicaciones en 50% mediante optimización de rendimiento",
-          "Lideré planificación técnica y retrospectivas de sprint para equipos ágiles"
+          "Desarrollé funcionalidades full-stack con React.js para una plataforma de medios digitales",
+          "Colaboré con el equipo usando flujos de trabajo basados en Git"
         ]
       },
       {
-        "company": "Empresas de Desarrollo de Software",
-        "position": "Desarrollador Full Stack JavaScript",
-        "period": "2015 - 2017",
-        "location": "Culiacán, Sinaloa, México",
-        "description": "Desarrollé aplicaciones web responsivas y APIs RESTful usando frameworks JavaScript modernos. Enfocado en crear interfaces de usuario intuitivas y servicios backend escalables.",
+        "company": "Axity",
+        "position": "Ingeniero de Software",
+        "period": "May 2018 - Oct 2018",
+        "location": "Ciudad de México, México",
+        "description": "Desarrollo de software con React.js.",
         "achievements": [
-          "Desarrollé 15+ aplicaciones web usando React, Angular y Vue.js",
-          "Construí APIs RESTful con Node.js, Express y MongoDB",
-          "Implementé diseños responsivos logrando 95%+ en puntajes de compatibilidad móvil",
-          "Colaboré con diseñadores UX para implementar interfaces pixel-perfect",
-          "Integré APIs y servicios de terceros (Google Maps, Firebase, AWS)",
-          "Participé en revisiones de código y sesiones de pair programming"
-        ]
-      },
-      {
-        "company": "Inicio de Carrera",
-        "position": "Desarrollador Web Junior",
-        "period": "2013 - 2015",
-        "location": "Culiacán, Sinaloa, México",
-        "description": "Inicié carrera profesional construyendo sitios y aplicaciones web. Adquirí experiencia fundamental en HTML, CSS, JavaScript y tecnologías backend.",
-        "achievements": [
-          "Desarrollé 20+ sitios web para pequeñas empresas y startups",
-          "Aprendí y apliqué frameworks JavaScript (jQuery, AngularJS)",
-          "Implementé diseños responsivos usando Bootstrap y CSS3",
-          "Administré instalaciones WordPress y desarrollo de temas personalizados",
-          "Trabajé con bases de datos MySQL y desarrollo backend en PHP",
-          "Proporcioné soporte técnico y mantenimiento de sitios web para clientes"
+          "Construí soluciones de software usando React.js",
+          "Trabajé dentro de flujos de desarrollo basados en Git"
         ]
       }
     ]
@@ -109,6 +112,7 @@
       "Tailwind CSS",
       "Material-UI",
       "Stripe",
+      "AWS",
       "Arquitectura de Microfrontends",
       "Microservicios",
       "APIs RESTful",
@@ -119,28 +123,80 @@
       "Accesibilidad",
       "Optimización de Rendimiento",
       "Diseño Responsivo"
+    ],
+    "groups": [
+      {
+        "name": "frontend",
+        "items": [
+          "JavaScript (ES2024+)",
+          "TypeScript",
+          "React.js",
+          "Next.js",
+          "Redux",
+          "HTML5",
+          "CSS3",
+          "Tailwind CSS",
+          "Material-UI",
+          "Diseño Responsivo"
+        ]
+      },
+      {
+        "name": "backend",
+        "items": [
+          "Node.js",
+          "Express.js",
+          "GraphQL",
+          "APIs RESTful",
+          "Microservicios",
+          "Arquitectura de Microfrontends"
+        ]
+      },
+      {
+        "name": "testing",
+        "items": ["Jest", "Vitest", "React Testing Library", "TDD/BDD"]
+      },
+      {
+        "name": "data-infra",
+        "items": [
+          "MongoDB",
+          "PostgreSQL",
+          "Prisma",
+          "Webpack",
+          "Git/GitHub",
+          "Stripe",
+          "AWS"
+        ]
+      },
+      {
+        "name": "ai-ml",
+        "items": ["LLMs Locales (Ollama, LM Studio)", "Integración de IA/ML"]
+      },
+      {
+        "name": "design-ux",
+        "items": [
+          "Diseño UX/UI",
+          "Accesibilidad",
+          "Optimización de Rendimiento"
+        ]
+      }
     ]
   },
   "education": {
     "title": "Educación y Certificaciones",
     "degree": "Ingeniería en Sistemas Computacionales - Instituto Tecnológico de Culiacán",
     "years": "2005 - 2010",
-    "certifications": "Certificaciones Recientes (2025) - 16+ Certificaciones Profesionales",
+    "certifications": "Certificaciones Recientes (2025) - 26 Certificaciones Profesionales",
     "certList": [
-      "Claude Code in Action",
-      "Certified Mid-Level React Developer",
-      "LLMs Locales con Ollama y LM Studio",
-      "React Testing Library con Jest/Vitest",
-      "Testing Unitario/Integración en Node.js Express",
-      "Arquitectura de Microfrontends",
-      "Dominio del Framework Next.js",
-      "React.js Hooks Avanzados",
-      "Manejo de Estado con GraphQL y Redux",
-      "Diseño UX/UI y Accesibilidad",
-      "Optimización de Rendimiento y Mejores Prácticas"
+      "Claude Code in Action - Anthropic",
+      "Certified Mid-Level React Developer - Certificates.dev",
+      "LLMs Locales via Ollama y LM Studio - The Practical Guide",
+      "React Testing Library con Jest / Vitest",
+      "Node.js Express - Testing Unitario/Integración con Jest",
+      "Microfrontends con React: Guía Completa para Desarrolladores",
+      "Next.js: Guía Completa para Desarrolladores"
     ]
   },
   "footer": {
-    "copyright": "© 2025 Oscar E. Oceguera Bibriesca. Todos los derechos reservados."
+    "copyright": "© 2026 Oscar E. Oceguera Bibriesca. Todos los derechos reservados."
   }
 }
