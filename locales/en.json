@@ -181,8 +181,9 @@
     "title": "Education & Certifications",
     "degree": "Computer Systems Engineering - Instituto Tecnológico de Culiacán",
     "years": "2005 - 2010",
-    "certifications": "Recent Certifications (2025) - 26 Professional Certifications",
+    "certifications": "Recent Certifications (2025-2026) - 26 Professional Certifications",
     "certList": [
+      "Harness Engineering & Agent Orchestration - Master.dev",
       "Claude Code in Action - Anthropic",
       "Certified Mid-Level React Developer - Certificates.dev",
       "Local LLMs via Ollama & LM Studio - The Practical Guide",

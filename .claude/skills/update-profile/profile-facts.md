@@ -1,6 +1,6 @@
 # Profile facts (snapshot)
 
-Scraped from LinkedIn (`linkedin.com/in/oscaroceguerab`) and GitHub (`github.com/oscaroceguera`) on 2026-08-24. This is a point-in-time snapshot to seed content, not a live source — re-scrape both profiles when the user asks for fresh info, since roles/certs/dates change.
+Scraped from LinkedIn (`linkedin.com/in/oscaroceguerab`) and GitHub (`github.com/oscaroceguera`) on 2026-09-30. This is a point-in-time snapshot to seed content, not a live source — re-scrape both profiles when the user asks for fresh info, since roles/certs/dates change.
 
 ## Identity
 - Oscar Eduardo Oceguera Bibriesca
@@ -9,7 +9,7 @@ Scraped from LinkedIn (`linkedin.com/in/oscaroceguerab`) and GitHub (`github.com
 - 8+ years full-stack JavaScript development
 
 ## Current role
-- **Sr. Software Engineer, Clip (PayClip)** — Dec 2020–present (5y9mo)
+- **Sr. Software Engineer, Clip (PayClip)** — Dec 2020–present (5y10mo)
   Fintech platform serving thousands of merchants across Mexico. React.js, Node.js, microservices, AWS.
 
 ## Experience (most recent first)
@@ -23,6 +23,7 @@ Scraped from LinkedIn (`linkedin.com/in/oscaroceguerab`) and GitHub (`github.com
 - Instituto Tecnológico de Culiacán — Ing. en Sistemas Computacionales / Ing. de Software, 2005–2010
 
 ## Certifications (recent highlights; 26 total on LinkedIn)
+- Course Completed: Harness Engineering & Agent Orchestration — Master.dev (Sep 2026)
 - Claude Code in Action — Anthropic (Dec 2025)
 - Certified Mid-Level React Developer — Certificates.dev (Nov 2025)
 - Local LLMs via Ollama & LM Studio — The Practical Guide (2025)

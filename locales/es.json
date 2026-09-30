@@ -185,8 +185,9 @@
     "title": "Educación y Certificaciones",
     "degree": "Ingeniería en Sistemas Computacionales - Instituto Tecnológico de Culiacán",
     "years": "2005 - 2010",
-    "certifications": "Certificaciones Recientes (2025) - 26 Certificaciones Profesionales",
+    "certifications": "Certificaciones Recientes (2025-2026) - 26 Certificaciones Profesionales",
     "certList": [
+      "Harness Engineering y Orquestación de Agentes - Master.dev",
       "Claude Code in Action - Anthropic",
       "Certified Mid-Level React Developer - Certificates.dev",
       "LLMs Locales via Ollama y LM Studio - The Practical Guide",
