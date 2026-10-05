@@ -21,7 +21,7 @@
     "location": "Ubicación",
     "locationValue": "Culiacán, Sinaloa, México • Disponible Remoto",
     "community": "Liderazgo en la Comunidad",
-    "communityValue": "Organizador de JSConf México (500+ desarrolladores, 2023-Presente) • Co-Organizador de EventLoop México • Mentor en Hackademy"
+    "communityValue": "Organizador de JSConf México (500+ desarrolladores, 2023-Presente) • Co-Organizador de EventLoop México • Mentor en Hackademy • Mentor en Buildaton (comunidad de Cursor, Culiacán, ago. 2026)"
   },
   "experience": {
     "title": "Experiencia Profesional",
@@ -187,6 +187,8 @@
     "years": "2005 - 2010",
     "certifications": "Certificaciones Recientes (2025-2026) - 26 Certificaciones Profesionales",
     "certList": [
+      "Fundamentos de Agentes de IA, v2 - Master.dev",
+      "Claude Code - Master.dev",
       "Harness Engineering y Orquestación de Agentes - Master.dev",
       "Claude Code in Action - Anthropic",
       "Certified Mid-Level React Developer - Certificates.dev",

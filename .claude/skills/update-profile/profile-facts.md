@@ -1,6 +1,6 @@
 # Profile facts (snapshot)
 
-Scraped from LinkedIn (`linkedin.com/in/oscaroceguerab`) and GitHub (`github.com/oscaroceguera`) on 2026-09-30. This is a point-in-time snapshot to seed content, not a live source — re-scrape both profiles when the user asks for fresh info, since roles/certs/dates change.
+Scraped from LinkedIn (`linkedin.com/in/oscaroceguerab`) and GitHub (`github.com/oscaroceguera`) on 2026-10-05. This is a point-in-time snapshot to seed content, not a live source — re-scrape both profiles when the user asks for fresh info, since roles/certs/dates change.
 
 ## Identity
 - Oscar Eduardo Oceguera Bibriesca
@@ -22,15 +22,17 @@ Scraped from LinkedIn (`linkedin.com/in/oscaroceguerab`) and GitHub (`github.com
 ## Education
 - Instituto Tecnológico de Culiacán — Ing. en Sistemas Computacionales / Ing. de Software, 2005–2010
 
-## Certifications (recent highlights; 26 total on LinkedIn)
+## Certifications (recent highlights)
+- Course Completed: AI Agents Fundamentals, v2 — Master.dev (Oct 2026)
+- Course Completed: Claude Code — Master.dev (Oct 2026)
 - Course Completed: Harness Engineering & Agent Orchestration — Master.dev (Sep 2026)
 - Claude Code in Action — Anthropic (Dec 2025)
 - Certified Mid-Level React Developer — Certificates.dev (Nov 2025)
-- Local LLMs via Ollama & LM Studio — The Practical Guide (2025)
-- React Testing Library with Jest / Vitest (2025)
-- Node.js Express — unit/integration testing with Jest (2025)
-- Microfrontends with React: A Complete Developer's Guide (2025)
-- Next.js: The Complete Developer's Guide (2025)
+- Claude Code Crash Course: Claude Code In a Day — Udemy (Oct 2025)
+- Go: The Complete Developer's Guide (Golang) — Udemy (Apr 2024)
+- ULL Authentication with React / Next.js / TypeScript 2023 — Udemy (Jun 2023)
+- Node.js Express — unit/integration testing with Jest — Udemy (Dec 2020)
+- Node.js Microservices for beginners — Udemy (Nov 2020)
 
 ## Skills (top signals)
 Frontend: React.js, Next.js, Redux, React Hooks, Microfrontends, Responsive Design
@@ -43,6 +45,7 @@ AI/ML: Local LLMs, Ollama, LM Studio
 - **JSConf México** — Organizer, Mar 2023–present. Ran JSConf México 2025 (500+ attendees).
 - **EventLoop Mexico** — Organizer/co-organizer of Mexico's JS meetup community.
 - **Hackademy** — Mentor.
+- **Buildaton** — Mentor at the hackathon organized by the Cursor community, Aug 29 2026, Culiacán, Sinaloa, Mexico.
 
 ## Recommendations received
 - Fernando Espinosa Salido (Tech Lead, Clip): "Oscar is the kind of software developer that enjoys challenges. He is a team builder and loves to share knowledge."
