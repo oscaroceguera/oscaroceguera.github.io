@@ -1,6 +1,6 @@
 # Profile facts (snapshot)
 
-Scraped from LinkedIn (`linkedin.com/in/oscaroceguerab`) and GitHub (`github.com/oscaroceguera`) on 2026-10-05. This is a point-in-time snapshot to seed content, not a live source — re-scrape both profiles when the user asks for fresh info, since roles/certs/dates change.
+Scraped from LinkedIn (`linkedin.com/in/oscaroceguerab`) and GitHub (`github.com/oscaroceguera`) on 2026-11-11. This is a point-in-time snapshot to seed content, not a live source — re-scrape both profiles when the user asks for fresh info, since roles/certs/dates change.
 
 ## Identity
 - Oscar Eduardo Oceguera Bibriesca
@@ -23,6 +23,7 @@ Scraped from LinkedIn (`linkedin.com/in/oscaroceguerab`) and GitHub (`github.com
 - Instituto Tecnológico de Culiacán — Ing. en Sistemas Computacionales / Ing. de Software, 2005–2010
 
 ## Certifications (recent highlights)
+- Course Completed: Complete Intro to MCP — Master.dev (Nov 2026)
 - Course Completed: AI Agents Fundamentals, v2 — Master.dev (Oct 2026)
 - Course Completed: Claude Code — Master.dev (Oct 2026)
 - Course Completed: Harness Engineering & Agent Orchestration — Master.dev (Sep 2026)
@@ -42,7 +43,7 @@ Cloud/tools: AWS, Stripe, Git/GitHub, Webpack
 AI/ML: Local LLMs, Ollama, LM Studio
 
 ## Community & leadership
-- **JSConf México** — Organizer, Mar 2023–present. Ran JSConf México 2025 (500+ attendees).
+- **JSConf México** — Organizer, Mar 2023–present. Ran JSConf México 2025 (500+ attendees); co-organized 2026 edition, Oct 29-30, Guadalajara (29 speakers).
 - **EventLoop Mexico** — Organizer/co-organizer of Mexico's JS meetup community.
 - **Hackademy** — Mentor.
 - **Buildaton** — Mentor at the hackathon organized by the Cursor community, Aug 29 2026, Culiacán, Sinaloa, Mexico.
@@ -50,6 +51,9 @@ AI/ML: Local LLMs, Ollama, LM Studio
 ## Recommendations received
 - Fernando Espinosa Salido (Tech Lead, Clip): "Oscar is the kind of software developer that enjoys challenges. He is a team builder and loves to share knowledge."
 - Elvia Rosa Martínez Bueno: perseverant, capable, innovative, highly committed.
+
+## GitHub stats
+- 997 followers, 290+ public repos, 1,700+ contributions in the last year, 26 certifications per README.
 
 ## Notes for reuse
 - GitHub profile README already has a polished long-form bio (About Me, Highlights, Tech Stack, Philosophy, Testimonials) — good source for hero/about copy tone.
