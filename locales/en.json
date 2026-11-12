@@ -1,13 +1,13 @@
 {
   "metadata": {
     "title": "Oscar Oceguera - Full Stack JavaScript Developer",
-    "description": "Professional portfolio of Oscar E. Oceguera Bibriesca, a Full Stack JavaScript Developer with 8+ years of experience specializing in React, Node.js, and modern web technologies. Software Engineer at Clip (Mexico's fintech platform), JSConf México Organizer (500+ developers), and EventLoop Mexico Co-Organizer. 277 repositories, 922 followers, 26 certifications."
+    "description": "Professional portfolio of Oscar E. Oceguera Bibriesca, a Full Stack JavaScript Developer with 8+ years of experience specializing in React, Node.js, and modern web technologies. Software Engineer at Clip (Mexico's fintech platform), JSConf México Organizer (500+ developers), and EventLoop Mexico Co-Organizer. 290+ repositories, 997 followers, 27 certifications."
   },
   "hero": {
     "name": "Oscar E. Oceguera Bibriesca",
     "title": "Full Stack JavaScript Developer",
     "roleLine": "Full Stack JavaScript Developer — Sr. Software Engineer @ Clip",
-    "subtitle": "Software Engineer at Clip with 8+ years of experience building scalable web applications serving thousands of users across Mexico. Passionate about tackling technical challenges and sharing knowledge. 922 followers • 277 repositories • Open to remote work.",
+    "subtitle": "Software Engineer at Clip with 8+ years of experience building scalable web applications serving thousands of users across Mexico. Passionate about tackling technical challenges and sharing knowledge. 997 followers • 290+ repositories • Open to remote work.",
     "availability": "available for remote work",
     "highlights": ["React.js", "Node.js", "Next.js", "AWS", "TypeScript"],
     "github": "GitHub",
@@ -16,12 +16,12 @@
   },
   "about": {
     "title": "About Me",
-    "paragraph1": "I'm a Full Stack JavaScript Developer with 8+ years of experience building scalable web applications that impact thousands of users. As a team builder who enjoys challenges, I believe in the power of collaboration and knowledge sharing to create user-centric solutions that enhance efficiency. With 277 repositories and 922 followers, I'm actively contributing to the developer community.",
+    "paragraph1": "I'm a Full Stack JavaScript Developer with 8+ years of experience building scalable web applications that impact thousands of users. As a team builder who enjoys challenges, I believe in the power of collaboration and knowledge sharing to create user-centric solutions that enhance efficiency. With 290+ repositories and 997 followers, I'm actively contributing to the developer community.",
     "paragraph2": "Currently working as a Software Engineer at Clip, Mexico's leading fintech platform, I bring perseverance, capability, and innovation to every project. I specialize in scalable web applications, microservices architecture, and the modern JavaScript ecosystem. I emphasize attention to detail in UI design and believe in building applications that facilitate people's work and performance.",
     "location": "Location",
     "locationValue": "Culiacán, Sinaloa, Mexico • Remote Available",
     "community": "Community Leadership",
-    "communityValue": "JSConf México Organizer (500+ developers, 2023-Present) • EventLoop Mexico Co-Organizer • Hackademy Mentor • Buildaton Mentor (Cursor community, Culiacán, Aug 2026)"
+    "communityValue": "JSConf México Organizer (500+ developers in 2025, 2026 edition in Guadalajara, 2023-Present) • EventLoop Mexico Co-Organizer • Hackademy Mentor • Buildaton Mentor (Cursor community, Culiacán, Aug 2026)"
   },
   "experience": {
     "title": "Professional Experience",
@@ -181,8 +181,9 @@
     "title": "Education & Certifications",
     "degree": "Computer Systems Engineering - Instituto Tecnológico de Culiacán",
     "years": "2005 - 2010",
-    "certifications": "Recent Certifications (2025-2026) - 26 Professional Certifications",
+    "certifications": "Recent Certifications (2025-2026) - 27 Professional Certifications",
     "certList": [
+      "Complete Intro to MCP - Master.dev",
       "AI Agents Fundamentals, v2 - Master.dev",
       "Claude Code - Master.dev",
       "Harness Engineering & Agent Orchestration - Master.dev",
